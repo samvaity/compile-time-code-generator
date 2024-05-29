@@ -28,7 +28,7 @@ public interface UsersService {
 //            throw new IllegalArgumentException("pipeline cannot be null");
 //        }
         try {
-            Class<?> clazz = Class.forName("com.service.clientlibrary.implementation.TodoItemsAttachmentsServiceImpl");
+            Class<?> clazz = Class.forName("com.service.clientlibrary.implementation.UsersService");
             return (TodoItemsAttachmentsService) clazz.getMethod("getInstance", HttpPipeline.class).invoke(null, pipeline);
         } catch (ClassNotFoundException | NoSuchMethodException | IllegalAccessException |
                  InvocationTargetException e) {

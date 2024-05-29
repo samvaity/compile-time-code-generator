@@ -19,7 +19,7 @@ import java.lang.reflect.InvocationTargetException;
  * The interface defining all the services for TodoClientTodoItemsAttachments to be used by the proxy service to
  * perform REST calls.
  */
-@ServiceInterface(name = "TodoClientTodoItemsA", host = "{endpoint}")
+@ServiceInterface(name = "TodoClientTodoItemsAttachments", host = "{endpoint}")
 public interface TodoItemsAttachmentsService {
 
     // TODO: edited the following to match GeneratedServiceAPI
