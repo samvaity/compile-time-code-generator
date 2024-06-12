@@ -1,5 +1,6 @@
 package com.service.clientlibrary.implementation;
 
+import com.service.clientlibrary.implementation.models.ServiceVersion;
 import io.clientcore.core.http.models.HttpHeaderName;
 import io.clientcore.core.http.models.HttpHeaders;
 import io.clientcore.core.http.models.HttpMethod;
@@ -10,7 +11,6 @@ import io.clientcore.core.http.models.Response;
 import io.clientcore.core.http.models.ResponseBodyMode;
 import io.clientcore.core.http.pipeline.HttpPipeline;
 import io.clientcore.core.implementation.http.HttpResponseAccessHelper;
-import io.clientcore.core.implementation.http.rest.RestProxyUtils;
 import io.clientcore.core.util.ClientLogger;
 import io.clientcore.core.util.binarydata.BinaryData;
 import io.clientcore.core.util.serializer.ObjectSerializer;
@@ -27,24 +27,41 @@ public class UsersServiceImpl implements UsersService {
 
     private final HttpPipeline defaultPipeline;
 
-    private final ObjectSerializer serializer = RestProxyUtils.createDefaultSerializer();
+    private final ObjectSerializer serializer;
 
-    private UsersServiceImpl(HttpPipeline defaultPipeline) {
+    private final String endpoint;
+
+    private final ServiceVersion serviceVersion;
+
+    public UsersServiceImpl(HttpPipeline defaultPipeline, ObjectSerializer serializer,
+            String endpoint, ServiceVersion serviceVersion) {
         this.defaultPipeline = defaultPipeline;
+        this.serializer = serializer;
+        this.endpoint = endpoint;
+        this.serviceVersion = serviceVersion;
     }
 
-    public static UsersService getInstance(HttpPipeline defaultPipeline) {
-        return INSTANCE_MAP.computeIfAbsent(defaultPipeline, pipeline -> new UsersServiceImpl(defaultPipeline));
+    public String getEndpoint() {
+        return endpoint;
+    }
+
+    public HttpPipeline getPipeline() {
+        return defaultPipeline;
+    }
+
+    public ServiceVersion getServiceVersion() {
+        return serviceVersion;
+    }
+
+    public Response<BinaryData> createSync(String accept, BinaryData user,
+            RequestOptions requestOptions) {
+        return createSync(this.getEndpoint(), this.getServiceVersion().getVersion(), accept, user, requestOptions);
     }
 
     @Override
     public Response<BinaryData> createSync(String endpoint, String accept, BinaryData user,
             RequestOptions requestOptions) {
-        return createSync(defaultPipeline, endpoint, accept, user, requestOptions);
-    }
-
-    private Response<BinaryData> createSync(HttpPipeline pipeline, String endpoint, String accept,
-            BinaryData user, RequestOptions requestOptions) {
+        HttpPipeline pipeline = this.getPipeline();
         String host = endpoint + "/users";
 
         // create the request

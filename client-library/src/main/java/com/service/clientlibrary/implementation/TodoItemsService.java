@@ -6,6 +6,7 @@ import io.clientcore.core.http.annotation.HeaderParam;
 import io.clientcore.core.http.annotation.HostParam;
 import io.clientcore.core.http.annotation.HttpRequestInformation;
 import io.clientcore.core.http.annotation.PathParam;
+import io.clientcore.core.http.annotation.QueryParam;
 import io.clientcore.core.http.annotation.UnexpectedResponseExceptionDetail;
 import io.clientcore.core.http.models.HttpMethod;
 import io.clientcore.core.http.models.RequestOptions;
@@ -80,5 +81,5 @@ public interface TodoItemsService {
     @UnexpectedResponseExceptionDetail(exceptionTypeName = "RESOURCE_MODIFIED", statusCode = { 409 })
     @UnexpectedResponseExceptionDetail
     Response<Void> deleteSync(@HostParam("endpoint") String endpoint, @PathParam("id") long id,
-                              @HeaderParam("accept") String accept, RequestOptions requestOptions);
+                              @HeaderParam("accept") String accept, RequestOptions requestOptions, @QueryParam("force") boolean force);
 }

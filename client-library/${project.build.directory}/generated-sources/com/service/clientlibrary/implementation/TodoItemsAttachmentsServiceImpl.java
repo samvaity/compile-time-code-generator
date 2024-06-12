@@ -1,5 +1,6 @@
 package com.service.clientlibrary.implementation;
 
+import com.service.clientlibrary.models.ServiceVersion;
 import io.clientcore.core.http.models.HttpHeaderName;
 import io.clientcore.core.http.models.HttpHeaders;
 import io.clientcore.core.http.models.HttpMethod;
@@ -10,7 +11,6 @@ import io.clientcore.core.http.models.Response;
 import io.clientcore.core.http.models.ResponseBodyMode;
 import io.clientcore.core.http.pipeline.HttpPipeline;
 import io.clientcore.core.implementation.http.HttpResponseAccessHelper;
-import io.clientcore.core.implementation.http.rest.RestProxyUtils;
 import io.clientcore.core.util.ClientLogger;
 import io.clientcore.core.util.binarydata.BinaryData;
 import io.clientcore.core.util.serializer.ObjectSerializer;
@@ -31,24 +31,41 @@ public class TodoItemsAttachmentsServiceImpl implements TodoItemsAttachmentsServ
 
     private final HttpPipeline defaultPipeline;
 
-    private final ObjectSerializer serializer = RestProxyUtils.createDefaultSerializer();
+    private final ObjectSerializer serializer;
 
-    private TodoItemsAttachmentsServiceImpl(HttpPipeline defaultPipeline) {
+    private final String endpoint;
+
+    private final ServiceVersion serviceVersion;
+
+    public TodoItemsAttachmentsServiceImpl(HttpPipeline defaultPipeline,
+            ObjectSerializer serializer, String endpoint, ServiceVersion serviceVersion) {
         this.defaultPipeline = defaultPipeline;
+        this.serializer = serializer;
+        this.endpoint = endpoint;
+        this.serviceVersion = serviceVersion;
     }
 
-    public static TodoItemsAttachmentsService getInstance(HttpPipeline defaultPipeline) {
-        return INSTANCE_MAP.computeIfAbsent(defaultPipeline, pipeline -> new TodoItemsAttachmentsServiceImpl(defaultPipeline));
+    public String getEndpoint() {
+        return endpoint;
+    }
+
+    public HttpPipeline getPipeline() {
+        return defaultPipeline;
+    }
+
+    public ServiceVersion getServiceVersion() {
+        return serviceVersion;
+    }
+
+    public Response<BinaryData> listSync(long itemId, String accept,
+            RequestOptions requestOptions) {
+        return listSync(this.getEndpoint(), this.getServiceVersion().getVersion(), itemId, accept, requestOptions);
     }
 
     @Override
     public Response<BinaryData> listSync(String endpoint, long itemId, String accept,
             RequestOptions requestOptions) {
-        return listSync(defaultPipeline, endpoint, itemId, accept, requestOptions);
-    }
-
-    private Response<BinaryData> listSync(HttpPipeline pipeline, String endpoint, long itemId,
-            String accept, RequestOptions requestOptions) {
+        HttpPipeline pipeline = this.getPipeline();
         String host = endpoint + "/items/" + itemId + "/attachments";
 
         // create the request
@@ -87,14 +104,15 @@ public class TodoItemsAttachmentsServiceImpl implements TodoItemsAttachmentsServ
         return (Response<BinaryData>) response;
     }
 
+    public Response<Void> createAttachmentSync(long itemId, String accept, BinaryData contents,
+            RequestOptions requestOptions) {
+        return createAttachmentSync(this.getEndpoint(), this.getServiceVersion().getVersion(), itemId, accept, contents, requestOptions);
+    }
+
     @Override
     public Response<Void> createAttachmentSync(String endpoint, long itemId, String accept,
             BinaryData contents, RequestOptions requestOptions) {
-        return createAttachmentSync(defaultPipeline, endpoint, itemId, accept, contents, requestOptions);
-    }
-
-    private Response<Void> createAttachmentSync(HttpPipeline pipeline, String endpoint, long itemId,
-            String accept, BinaryData contents, RequestOptions requestOptions) {
+        HttpPipeline pipeline = this.getPipeline();
         String host = endpoint + "/items/" + itemId + "/attachments";
 
         // create the request

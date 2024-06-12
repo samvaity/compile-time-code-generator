@@ -1,12 +1,12 @@
 package com.generation.tools.codegen.utils;
 
 import com.generation.tools.codegen.exceptions.MissingSubstitutionException;
-import org.junit.jupiter.api.Test;
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertThrows;
-
 import com.generation.tools.codegen.models.HttpRequestContext;
 import com.generation.tools.codegen.models.Substitution;
+import org.junit.jupiter.api.Test;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 public class PathBuilderTest {
 

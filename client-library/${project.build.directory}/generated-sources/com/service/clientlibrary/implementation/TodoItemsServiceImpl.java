@@ -1,5 +1,6 @@
 package com.service.clientlibrary.implementation;
 
+import com.service.clientlibrary.implementation.models.ServiceVersion;
 import io.clientcore.core.http.models.HttpHeaderName;
 import io.clientcore.core.http.models.HttpHeaders;
 import io.clientcore.core.http.models.HttpMethod;
@@ -10,7 +11,6 @@ import io.clientcore.core.http.models.Response;
 import io.clientcore.core.http.models.ResponseBodyMode;
 import io.clientcore.core.http.pipeline.HttpPipeline;
 import io.clientcore.core.implementation.http.HttpResponseAccessHelper;
-import io.clientcore.core.implementation.http.rest.RestProxyUtils;
 import io.clientcore.core.util.ClientLogger;
 import io.clientcore.core.util.binarydata.BinaryData;
 import io.clientcore.core.util.serializer.ObjectSerializer;
@@ -31,24 +31,40 @@ public class TodoItemsServiceImpl implements TodoItemsService {
 
     private final HttpPipeline defaultPipeline;
 
-    private final ObjectSerializer serializer = RestProxyUtils.createDefaultSerializer();
+    private final ObjectSerializer serializer;
 
-    private TodoItemsServiceImpl(HttpPipeline defaultPipeline) {
+    private final String endpoint;
+
+    private final ServiceVersion serviceVersion;
+
+    public TodoItemsServiceImpl(HttpPipeline defaultPipeline, ObjectSerializer serializer,
+            String endpoint, ServiceVersion serviceVersion) {
         this.defaultPipeline = defaultPipeline;
+        this.serializer = serializer;
+        this.endpoint = endpoint;
+        this.serviceVersion = serviceVersion;
     }
 
-    public static TodoItemsService getInstance(HttpPipeline defaultPipeline) {
-        return INSTANCE_MAP.computeIfAbsent(defaultPipeline, pipeline -> new TodoItemsServiceImpl(defaultPipeline));
+    public String getEndpoint() {
+        return endpoint;
+    }
+
+    public HttpPipeline getPipeline() {
+        return defaultPipeline;
+    }
+
+    public ServiceVersion getServiceVersion() {
+        return serviceVersion;
+    }
+
+    public Response<BinaryData> listSync(String accept, RequestOptions requestOptions) {
+        return listSync(this.getEndpoint(), this.getServiceVersion().getVersion(), accept, requestOptions);
     }
 
     @Override
     public Response<BinaryData> listSync(String endpoint, String accept,
             RequestOptions requestOptions) {
-        return listSync(defaultPipeline, endpoint, accept, requestOptions);
-    }
-
-    private Response<BinaryData> listSync(HttpPipeline pipeline, String endpoint, String accept,
-            RequestOptions requestOptions) {
+        HttpPipeline pipeline = this.getPipeline();
         String host = endpoint + "/items";
 
         // create the request
@@ -87,14 +103,15 @@ public class TodoItemsServiceImpl implements TodoItemsService {
         return (Response<BinaryData>) response;
     }
 
+    public Response<BinaryData> createSync(String contentType, String accept, BinaryData request,
+            RequestOptions requestOptions) {
+        return createSync(this.getEndpoint(), this.getServiceVersion().getVersion(), contentType, accept, request, requestOptions);
+    }
+
     @Override
     public Response<BinaryData> createSync(String endpoint, String contentType, String accept,
             BinaryData request, RequestOptions requestOptions) {
-        return createSync(defaultPipeline, endpoint, contentType, accept, request, requestOptions);
-    }
-
-    private Response<BinaryData> createSync(HttpPipeline pipeline, String endpoint,
-            String contentType, String accept, BinaryData request, RequestOptions requestOptions) {
+        HttpPipeline pipeline = this.getPipeline();
         String host = endpoint + "/items";
 
         // create the request
@@ -134,14 +151,14 @@ public class TodoItemsServiceImpl implements TodoItemsService {
         return (Response<BinaryData>) response;
     }
 
+    public Response<BinaryData> getSync(long id, String accept, RequestOptions requestOptions) {
+        return getSync(this.getEndpoint(), this.getServiceVersion().getVersion(), id, accept, requestOptions);
+    }
+
     @Override
     public Response<BinaryData> getSync(String endpoint, long id, String accept,
             RequestOptions requestOptions) {
-        return getSync(defaultPipeline, endpoint, id, accept, requestOptions);
-    }
-
-    private Response<BinaryData> getSync(HttpPipeline pipeline, String endpoint, long id,
-            String accept, RequestOptions requestOptions) {
+        HttpPipeline pipeline = this.getPipeline();
         String host = endpoint + "/items/" + id;
 
         // create the request
@@ -180,15 +197,15 @@ public class TodoItemsServiceImpl implements TodoItemsService {
         return (Response<BinaryData>) response;
     }
 
+    public Response<BinaryData> updateSync(String contentType, long id, String accept,
+            BinaryData patch, RequestOptions requestOptions) {
+        return updateSync(this.getEndpoint(), this.getServiceVersion().getVersion(), contentType, id, accept, patch, requestOptions);
+    }
+
     @Override
     public Response<BinaryData> updateSync(String endpoint, String contentType, long id,
             String accept, BinaryData patch, RequestOptions requestOptions) {
-        return updateSync(defaultPipeline, endpoint, contentType, id, accept, patch, requestOptions);
-    }
-
-    private Response<BinaryData> updateSync(HttpPipeline pipeline, String endpoint,
-            String contentType, long id, String accept, BinaryData patch,
-            RequestOptions requestOptions) {
+        HttpPipeline pipeline = this.getPipeline();
         String host = endpoint + "/items/" + id;
 
         // create the request
@@ -228,15 +245,16 @@ public class TodoItemsServiceImpl implements TodoItemsService {
         return (Response<BinaryData>) response;
     }
 
-    @Override
-    public Response<Void> deleteSync(String endpoint, long id, String accept,
-            RequestOptions requestOptions) {
-        return deleteSync(defaultPipeline, endpoint, id, accept, requestOptions);
+    public Response<Void> deleteSync(long id, String accept, RequestOptions requestOptions,
+            boolean force) {
+        return deleteSync(this.getEndpoint(), this.getServiceVersion().getVersion(), id, accept, requestOptions, force);
     }
 
-    private Response<Void> deleteSync(HttpPipeline pipeline, String endpoint, long id,
-            String accept, RequestOptions requestOptions) {
-        String host = endpoint + "/items/" + id;
+    @Override
+    public Response<Void> deleteSync(String endpoint, long id, String accept,
+            RequestOptions requestOptions, boolean force) {
+        HttpPipeline pipeline = this.getPipeline();
+        String host = endpoint + "/items/" + id + "?force=" + force;
 
         // create the request
         HttpRequest httpRequest = new HttpRequest(HttpMethod.DELETE, host);
