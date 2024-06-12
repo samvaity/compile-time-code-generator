@@ -1,0 +1,17 @@
+com\service\clientlibrary\models\AppConfigServiceVersion.class
+com\service\clientlibrary\implementation\models\ConfigurationClientCredentials.class
+com\service\clientlibrary\models\ConfigurationSetting.class
+com\service\clientlibrary\implementation\models\ConfigurationSettingHelper.class
+com\service\clientlibrary\models\package-info.class
+com\service\clientlibrary\models\ConfigurationSetting$1.class
+com\service\clientlibrary\implementation\models\package-info.class
+com\service\clientlibrary\implementation\models\ConfigurationClientCredentials$CredentialInformation.class
+com\service\clientlibrary\implementation\AppConfigServiceImpl.class
+com\service\clientlibrary\AppConfigClientBuilder.class
+com\service\clientlibrary\implementation\package-info.class
+com\service\clientlibrary\models\KeyValue.class
+com\service\clientlibrary\implementation\models\ServiceVersion.class
+com\service\clientlibrary\implementation\models\ConfigurationSettingHelper$ConfigurationSettingAccessor.class
+com\service\clientlibrary\implementation\AppConfigService.class
+com\service\clientlibrary\implementation\models\ConfigurationCredentialsPolicy.class
+com\service\clientlibrary\AppConfigClient.class
