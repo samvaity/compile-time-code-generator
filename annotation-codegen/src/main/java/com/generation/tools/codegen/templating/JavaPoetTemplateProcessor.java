@@ -20,7 +20,6 @@ import io.clientcore.core.util.serializer.ObjectSerializer;
 import java.io.IOException;
 import java.io.UncheckedIOException;
 import java.util.Arrays;
-import java.util.HashMap;
 import java.util.Map;
 import java.util.stream.Collectors;
 import javax.annotation.processing.ProcessingEnvironment;
@@ -29,9 +28,7 @@ import javax.lang.model.element.Modifier;
 public class JavaPoetTemplateProcessor implements TemplateProcessor {
     private static final ClassName HTTP_HEADER_NAME = ClassName.get("io.clientcore.core.http.models", "HttpHeaderName");
     private static final ClassName CONTENT_TYPE = ClassName.get("io.clientcore.core.http.models", "ContentType");
-    private static final ClassName SERVICE_VERSION =
-        ClassName.get("com.service.clientlibrary.implementation.models", "ServiceVersion");
-    private ClassName INTERFACE_TYPE;
+    private static ClassName SERVICE_VERSION_TYPE;
     private final ClassName HTTP_PIPELINE = ClassName.get("io.clientcore.core.http.pipeline", "HttpPipeline");
     private final ClassName HTTP_REQUEST = ClassName.get("io.clientcore.core.http.models", "HttpRequest");
     private final ClassName RESPONSE = ClassName.get("io.clientcore.core.http.models", "Response");
@@ -45,17 +42,17 @@ public class JavaPoetTemplateProcessor implements TemplateProcessor {
         String serviceInterfaceImplShortName = templateInput.getServiceInterfaceImplShortName();
         String serviceInterfaceShortName = templateInput.getServiceInterfaceShortName();
 
-        INTERFACE_TYPE = ClassName.get(packageName, serviceInterfaceShortName);
+        ClassName interfaceType = ClassName.get(packageName, serviceInterfaceShortName);
 
         // Create the INSTANCE_MAP field
-        TypeName mapType = ParameterizedTypeName.get(
-            ClassName.get(Map.class),
-            HTTP_PIPELINE,
-            INTERFACE_TYPE
-        );
-        FieldSpec instanceMap = FieldSpec.builder(mapType, "INSTANCE_MAP", Modifier.PRIVATE, Modifier.STATIC)
-            .initializer("new $T<>()", HashMap.class)
-            .build();
+        //TypeName mapType = ParameterizedTypeName.get(
+        //    ClassName.get(Map.class),
+        //    HTTP_PIPELINE,
+        //    interfaceType
+        //);
+        //FieldSpec instanceMap = FieldSpec.builder(mapType, "INSTANCE_MAP", Modifier.PRIVATE, Modifier.STATIC)
+        //    .initializer("new $T<>()", HashMap.class)
+        //    .build();
 
         // add LoggerField
         ClassName serviceClass = ClassName.get(packageName, serviceInterfaceImplShortName);
@@ -80,19 +77,11 @@ public class JavaPoetTemplateProcessor implements TemplateProcessor {
             .build();
 
         // Create the serviceVersion field
+        String[] parts = serviceInterfaceShortName.split("(?<=.)(?=\\p{Lu})"); // Split the interface name into parts
+        String fieldName = parts[0]; // Use the first part as the field name
+        SERVICE_VERSION_TYPE = ClassName.get("com.azure.ai.openai.assistants", fieldName + "ServiceVersion");
         FieldSpec serviceVersion =
-            FieldSpec.builder(SERVICE_VERSION,
-                    "serviceVersion", Modifier.PRIVATE, Modifier.FINAL)
-                .build();
-
-        // Create the getInstance method
-        MethodSpec getInstance = MethodSpec.methodBuilder("getInstance")
-            .addModifiers(Modifier.PUBLIC, Modifier.STATIC)
-            .returns(ClassName.get(packageName, serviceInterfaceShortName))
-            .addParameter(HTTP_PIPELINE, "defaultPipeline")
-            .addStatement("return INSTANCE_MAP.computeIfAbsent(defaultPipeline, pipeline -> new $N(defaultPipeline))",
-                serviceInterfaceImplShortName)
-            .build();
+            FieldSpec.builder(SERVICE_VERSION_TYPE, "serviceVersion", Modifier.PRIVATE, Modifier.FINAL).build();
 
         // Create the constructor
         MethodSpec constructor = MethodSpec.constructorBuilder()
@@ -103,21 +92,20 @@ public class JavaPoetTemplateProcessor implements TemplateProcessor {
             .addStatement("this.serializer = serializer")
             .addParameter(String.class, "endpoint")
             .addStatement("this.endpoint = endpoint")
-            .addParameter(SERVICE_VERSION,
+            .addParameter(SERVICE_VERSION_TYPE,
                 "serviceVersion")
             .addStatement("this.serviceVersion = serviceVersion")
             .build();
 
         classBuilder = TypeSpec.classBuilder(serviceInterfaceImplShortName)
             .addModifiers(Modifier.PUBLIC)
-            .addSuperinterface(INTERFACE_TYPE)
+            .addSuperinterface(interfaceType)
             .addField(loggerField)
-            .addField(instanceMap)
+            //.addField(instanceMap)
             .addField(defaultPipeline)
             .addField(serializer)
             .addField(endpoint)
             .addField(serviceVersion)
-            //.addMethod(getInstance)
             .addMethod(getEndpointMethod())
             .addMethod(getPipelineMethod())
             .addMethod(getServiceVersionMethod())
@@ -160,7 +148,7 @@ public class JavaPoetTemplateProcessor implements TemplateProcessor {
     private MethodSpec getServiceVersionMethod() {
         return MethodSpec.methodBuilder("getServiceVersion")
             .addModifiers(Modifier.PUBLIC)
-            .returns(SERVICE_VERSION)
+            .returns(SERVICE_VERSION_TYPE)
             .addStatement("return serviceVersion")
             .build();
     }
@@ -186,10 +174,10 @@ public class JavaPoetTemplateProcessor implements TemplateProcessor {
             .reduce((a, b) -> a + ", " + b)
             .orElse("");
         if (!"void".equals(method.getMethodReturnType())) {
-            methodBuilder.addStatement("return $L(this.getEndpoint(), this.getServiceVersion().getVersion(), $L)",
+            methodBuilder.addStatement("return $L(this.getEndpoint(), $L)",
                 method.getMethodName(), params);
         } else {
-            methodBuilder.addStatement("$L(this.getEndpoint(), this.getServiceVersion().getVersion(), $L)",
+            methodBuilder.addStatement("$L(this.getEndpoint(), $L)",
                 method.getMethodName(), params);
         }
 

@@ -5,6 +5,7 @@ import com.generation.tools.codegen.models.Substitution;
 import com.generation.tools.codegen.models.TemplateInput;
 import com.generation.tools.codegen.templating.TemplateProcessor;
 import com.generation.tools.codegen.utils.PathBuilder;
+import com.squareup.javapoet.ClassName;
 import io.clientcore.core.annotation.ServiceInterface;
 import io.clientcore.core.http.annotation.BodyParam;
 import io.clientcore.core.http.annotation.HeaderParam;

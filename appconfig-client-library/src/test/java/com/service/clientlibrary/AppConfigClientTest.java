@@ -20,7 +20,7 @@ public class AppConfigClientTest {
                          .setLabel("westUS")
                          .setValue("db_connection"),
                      false,
-                     Context.EMPTY)) {
+                     Context.none())) {
             ConfigurationSetting setting = response.getValue();
             System.out.printf("Key: %s, Value: %s, Label: %s", setting.getKey(), setting.getValue(), setting.getLabel());
         } catch (IOException e) {
@@ -37,7 +37,7 @@ public class AppConfigClientTest {
         ConfigurationSetting setting =
             configurationClient.getConfigurationSettingWithResponse(new ConfigurationSetting()
                 .setKey("prodDBConnection")
-                .setLabel("westUS"), null, false, Context.EMPTY).getValue();
+                .setLabel("westUS"), null, false, Context.none()).getValue();
         System.out.printf("Key: %s, Value: %s", setting.getKey(), setting.getValue());
     }
 }
