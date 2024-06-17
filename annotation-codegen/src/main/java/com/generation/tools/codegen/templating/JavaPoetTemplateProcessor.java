@@ -173,11 +173,19 @@ public class JavaPoetTemplateProcessor implements TemplateProcessor {
             .filter(name -> !name.equals("endpoint") && !name.equals("apiVersion"))
             .reduce((a, b) -> a + ", " + b)
             .orElse("");
+        //if (!"void".equals(method.getMethodReturnType())) {
+        //    methodBuilder.addStatement("return $L(this.getEndpoint(), $L)",
+        //        method.getMethodName(), params);
+        //} else {
+        //    methodBuilder.addStatement("$L(this.getEndpoint(), $L)",
+        //        method.getMethodName(), params);
+        //}
+
         if (!"void".equals(method.getMethodReturnType())) {
-            methodBuilder.addStatement("return $L(this.getEndpoint(), $L)",
+            methodBuilder.addStatement("return $L(this.getEndpoint(), this.getServiceVersion().getVersion(), $L)",
                 method.getMethodName(), params);
         } else {
-            methodBuilder.addStatement("$L(this.getEndpoint(), $L)",
+            methodBuilder.addStatement("$L(this.getEndpoint(), this.getServiceVersion().getVersion(), $L)",
                 method.getMethodName(), params);
         }
 
