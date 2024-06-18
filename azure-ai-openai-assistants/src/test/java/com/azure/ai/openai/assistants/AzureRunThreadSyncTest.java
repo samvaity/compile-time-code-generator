@@ -119,7 +119,7 @@ public class AzureRunThreadSyncTest extends AssistantsClientTestBase {
                 } catch (IOException e) {
                     throw new RuntimeException(e);
                 }
-                sleepIfRunningAgainstService(1000);
+                sleepIfRunningAgainstService(4000);
             } while (run.getStatus() == RunStatus.IN_PROGRESS || run.getStatus() == RunStatus.QUEUED);
 
             assertSame(RunStatus.COMPLETED, run.getStatus());
@@ -168,7 +168,7 @@ public class AzureRunThreadSyncTest extends AssistantsClientTestBase {
                 } catch (IOException e) {
                     throw new RuntimeException(e);
                 }
-                sleepIfRunningAgainstService(1000);
+                sleepIfRunningAgainstService(4000);
             } while (run.getStatus() == RunStatus.IN_PROGRESS || run.getStatus() == RunStatus.QUEUED);
 
             assertSame(RunStatus.COMPLETED, run.getStatus());

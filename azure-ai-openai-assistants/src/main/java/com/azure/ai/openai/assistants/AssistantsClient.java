@@ -258,7 +258,7 @@ public final class AssistantsClient {
         addAzureVersionToRequestOptions(openAIAssistantService.getEndpoint(), requestOptions,
             openAIAssistantService.getServiceVersion());
         final String accept = "application/json";
-        return this.openAIAssistantService.deleteAssistantSync(accept, assistantId, requestOptions, Context.none());
+        return this.openAIAssistantService.deleteAssistantSync(assistantId, accept, requestOptions, Context.none());
     }
 
     /**
@@ -413,7 +413,7 @@ public final class AssistantsClient {
         addAzureVersionToRequestOptions(openAIAssistantService.getEndpoint(), requestOptions,
             openAIAssistantService.getServiceVersion());
         final String accept = "application/json";
-        return this.openAIAssistantService.getAssistantSync(accept, assistantId, requestOptions, Context.none());
+        return this.openAIAssistantService.getAssistantSync(assistantId, accept, requestOptions, Context.none());
     }
 
     /**
@@ -499,7 +499,7 @@ public final class AssistantsClient {
         addAzureVersionToRequestOptions(openAIAssistantService.getEndpoint(), requestOptions,
             openAIAssistantService.getServiceVersion());
         final String accept = "application/json";
-        return this.openAIAssistantService.getThreadSync(accept, threadId, requestOptions, Context.none());
+        return this.openAIAssistantService.getThreadSync(threadId, accept, requestOptions, Context.none());
     }
 
     /**
@@ -526,7 +526,7 @@ public final class AssistantsClient {
         addAzureVersionToRequestOptions(openAIAssistantService.getEndpoint(), requestOptions,
             openAIAssistantService.getServiceVersion());
         final String accept = "application/json";
-        return this.openAIAssistantService.deleteThreadSync(accept, threadId, requestOptions, Context.none());
+        return this.openAIAssistantService.deleteThreadSync(threadId, accept, requestOptions, Context.none());
     }
 
     /**
@@ -586,7 +586,7 @@ public final class AssistantsClient {
         addAzureVersionToRequestOptions(openAIAssistantService.getEndpoint(), requestOptions,
             openAIAssistantService.getServiceVersion());
         final String accept = "application/json";
-        return this.openAIAssistantService.createMessageSync(accept, threadId, request, requestOptions, Context.none());
+        return this.openAIAssistantService.createMessageSync(threadId, accept, request, requestOptions, Context.none());
     }
 
     /**
@@ -678,7 +678,7 @@ public final class AssistantsClient {
         addAzureVersionToRequestOptions(openAIAssistantService.getEndpoint(), requestOptions,
             openAIAssistantService.getServiceVersion());
         final String accept = "application/json";
-        return this.openAIAssistantService.listMessagesSync(accept, threadId, requestOptions, Context.none());
+        return this.openAIAssistantService.listMessagesSync(threadId, accept, requestOptions, Context.none());
     }
 
     /**
@@ -721,7 +721,7 @@ public final class AssistantsClient {
         addAzureVersionToRequestOptions(openAIAssistantService.getEndpoint(), requestOptions,
             openAIAssistantService.getServiceVersion());
         final String accept = "application/json";
-        return this.openAIAssistantService.getMessageSync(accept, threadId, messageId, requestOptions,
+        return this.openAIAssistantService.getMessageSync(threadId, messageId, accept, requestOptions,
             Context.none());
     }
 
@@ -853,7 +853,7 @@ public final class AssistantsClient {
         addAzureVersionToRequestOptions(openAIAssistantService.getEndpoint(), requestOptions,
             openAIAssistantService.getServiceVersion());
         final String accept = "application/json";
-        return this.openAIAssistantService.createRunSync(accept, threadId, createRunOptions, requestOptions,
+        return this.openAIAssistantService.createRunSync(threadId, accept, createRunOptions, requestOptions,
             Context.none());
     }
 
@@ -958,7 +958,7 @@ public final class AssistantsClient {
         addAzureVersionToRequestOptions(openAIAssistantService.getEndpoint(), requestOptions,
             openAIAssistantService.getServiceVersion());
         final String accept = "application/json";
-        return this.openAIAssistantService.listRunsSync(accept, threadId, requestOptions, Context.none());
+        return this.openAIAssistantService.listRunsSync(threadId, accept, requestOptions, Context.none());
     }
 
     /**
@@ -1012,7 +1012,7 @@ public final class AssistantsClient {
         addAzureVersionToRequestOptions(openAIAssistantService.getEndpoint(), requestOptions,
             openAIAssistantService.getServiceVersion());
         final String accept = "application/json";
-        return this.openAIAssistantService.getRunSync(accept, threadId, runId, requestOptions, Context.none());
+        return this.openAIAssistantService.getRunSync(threadId, runId, accept, requestOptions, Context.none());
     }
 
     /**
@@ -1084,7 +1084,7 @@ public final class AssistantsClient {
         addAzureVersionToRequestOptions(openAIAssistantService.getEndpoint(), requestOptions,
             openAIAssistantService.getServiceVersion());
         final String accept = "application/json";
-        return this.openAIAssistantService.submitToolOutputsToRunSync(accept, threadId, runId, request, requestOptions,
+        return this.openAIAssistantService.submitToolOutputsToRunSync(threadId, runId, accept, request, requestOptions,
             Context.none());
     }
 
@@ -1139,7 +1139,7 @@ public final class AssistantsClient {
         addAzureVersionToRequestOptions(openAIAssistantService.getEndpoint(), requestOptions,
             openAIAssistantService.getServiceVersion());
         final String accept = "application/json";
-        return this.openAIAssistantService.cancelRunSync(accept, threadId, runId, requestOptions, Context.none());
+        return this.openAIAssistantService.cancelRunSync(threadId, runId, accept, requestOptions, Context.none());
     }
 
     /**
@@ -1278,7 +1278,7 @@ public final class AssistantsClient {
         addAzureVersionToRequestOptions(openAIAssistantService.getEndpoint(), requestOptions,
             openAIAssistantService.getServiceVersion());
         final String accept = "application/json";
-        return this.openAIAssistantService.getRunStepSync(accept, threadId, runId, stepId, requestOptions, Context.none());
+        return this.openAIAssistantService.getRunStepSync(threadId, runId, stepId, accept, requestOptions, Context.none());
     }
 
     /**
@@ -1375,7 +1375,7 @@ public final class AssistantsClient {
         addAzureVersionToRequestOptions(openAIAssistantService.getEndpoint(), requestOptions,
             openAIAssistantService.getServiceVersion());
         final String accept = "application/json";
-        return this.openAIAssistantService.listRunStepsSync(accept, threadId, runId, requestOptions, Context.none());
+        return this.openAIAssistantService.listRunStepsSync(threadId, runId, accept, requestOptions, Context.none());
     }
 
     /**
@@ -1456,7 +1456,7 @@ public final class AssistantsClient {
         addAzureVersionToRequestOptions(openAIAssistantService.getEndpoint(), requestOptions,
             openAIAssistantService.getServiceVersion());
         final String accept = "application/json";
-        return this.openAIAssistantService.deleteFileSync(accept, fileId, requestOptions, Context.none());
+        return this.openAIAssistantService.deleteFileSync(fileId, accept, requestOptions, Context.none());
     }
 
     /**
@@ -1646,7 +1646,7 @@ public final class AssistantsClient {
         addAzureVersionToRequestOptions(openAIAssistantService.getEndpoint(), requestOptions,
             openAIAssistantService.getServiceVersion());
         final String accept = "application/json";
-        return this.openAIAssistantService.updateAssistantSync(accept, assistantId, updateAssistantOptions,
+        return this.openAIAssistantService.updateAssistantSync(assistantId, accept, updateAssistantOptions,
             requestOptions, Context.none());
     }
 
@@ -1706,7 +1706,7 @@ public final class AssistantsClient {
         addAzureVersionToRequestOptions(openAIAssistantService.getEndpoint(), requestOptions,
             openAIAssistantService.getServiceVersion());
         final String accept = "application/json";
-        return this.openAIAssistantService.updateThreadSync(accept, threadId, request, requestOptions, Context.none());
+        return this.openAIAssistantService.updateThreadSync(threadId, accept, request, requestOptions, Context.none());
     }
 
     /**
@@ -1762,7 +1762,7 @@ public final class AssistantsClient {
         addAzureVersionToRequestOptions(openAIAssistantService.getEndpoint(), requestOptions,
             openAIAssistantService.getServiceVersion());
         final String accept = "application/json";
-        return this.openAIAssistantService.updateMessageSync(accept, threadId, messageId, request, requestOptions, Context.none());
+        return this.openAIAssistantService.updateMessageSync(threadId, messageId, accept, request, requestOptions, Context.none());
     }
 
     public ThreadRun cancelRun(String threadId, String runId) throws IOException {
@@ -1836,7 +1836,7 @@ public final class AssistantsClient {
         addAzureVersionToRequestOptions(openAIAssistantService.getEndpoint(), requestOptions,
             openAIAssistantService.getServiceVersion());
         final String accept = "application/json";
-        return this.openAIAssistantService.updateRunSync(accept, threadId, runId, request, requestOptions, Context.none());
+        return this.openAIAssistantService.updateRunSync(threadId, runId, accept, request, requestOptions, Context.none());
     }
 
     /**
@@ -1868,9 +1868,8 @@ public final class AssistantsClient {
         addAzureVersionToRequestOptions(openAIAssistantService.getEndpoint(), requestOptions,
             openAIAssistantService.getServiceVersion());
         final String accept = "application/json";
-        // TODO: Check
-        return null;
-        //return this.openAIAssistantService.uploadFileSync(accept, request, requestOptions, Context.none());
+        final String contentType = "multipart/form-data";
+        return this.openAIAssistantService.uploadFileSync(contentType, accept, request, requestOptions, Context.none());
     }
 
     /**
@@ -1900,7 +1899,7 @@ public final class AssistantsClient {
         addAzureVersionToRequestOptions(openAIAssistantService.getEndpoint(), requestOptions,
             openAIAssistantService.getServiceVersion());
         final String accept = "application/json";
-        return this.openAIAssistantService.getFileSync(accept, fileId, requestOptions, Context.none());
+        return this.openAIAssistantService.getFileSync(fileId, accept, requestOptions, Context.none());
     }
 
     /**
@@ -2045,26 +2044,6 @@ public final class AssistantsClient {
     //    return new IterableStream<>(eventStream.getEvents());
     //}
     //
-    ///**
-    // * Creates a new run for an assistant thread returning a stream of updates.
-    // *
-    // * @param threadId The thread to run.
-    // * @param assistantId The assistant that will run the thread.
-    // * @throws IllegalArgumentException thrown if parameters fail the validation.
-    // * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-    // * @return data representing a single evaluation run of an assistant thread.
-    // */
-    //@ServiceMethod(returns = ReturnType.COLLECTION)
-    //public IterableStream<StreamUpdate> createRunStream(String threadId, String assistantId) {
-    //    RequestOptions requestOptions = new RequestOptions();
-    //    BinaryData inputJson = BinaryData.fromObject(new CreateRunOptions(assistantId));
-    //    BinaryData adjustedJson = OpenAIUtils.injectStreamJsonField(inputJson, true);
-    //    Flux<ByteBuffer> responseStream
-    //        = createRunSync(accept, threadId, BinaryData.fromObject(adjustedJson), requestOptions).getValue()
-    //            .toFluxByteBuffer();
-    //    OpenAIServerSentEvents eventStream = new OpenAIServerSentEvents(responseStream);
-    //    return new IterableStream<>(eventStream.getEvents());
-    //}
 
     /**
      * Modifies an existing thread run.
@@ -2198,8 +2177,9 @@ public final class AssistantsClient {
 
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Response<BinaryData> getFileContentWithResponse(String fileId, RequestOptions requestOptions) {
-        return null;
-        //return this.openAIAssistantService.getFileContentSync(accept, fileId, requestOptions, Context.none());
+        //return null;
+        String accept = "application/json";
+        return this.openAIAssistantService.getFileContentSync(fileId, accept, requestOptions, Context.none());
     }
 
     /**
@@ -2470,7 +2450,7 @@ public final class AssistantsClient {
         addAzureVersionToRequestOptions(openAIAssistantService.getEndpoint(), requestOptions,
             openAIAssistantService.getServiceVersion());
         final String accept = "application/json";
-        return this.openAIAssistantService.getVectorStoreSync(accept, vectorStoreId, requestOptions, Context.none());
+        return this.openAIAssistantService.getVectorStoreSync(vectorStoreId, accept, requestOptions, Context.none());
     }
 
     /**
@@ -2532,7 +2512,7 @@ public final class AssistantsClient {
         addAzureVersionToRequestOptions(openAIAssistantService.getEndpoint(), requestOptions,
             openAIAssistantService.getServiceVersion());
         final String accept = "application/json";
-        return this.openAIAssistantService.modifyVectorStoreSync(accept, vectorStoreId, vectorStoreUpdateOptions,
+        return this.openAIAssistantService.modifyVectorStoreSync(vectorStoreId, accept, vectorStoreUpdateOptions,
             requestOptions, Context.none());
     }
 
@@ -2558,7 +2538,7 @@ public final class AssistantsClient {
         addAzureVersionToRequestOptions(openAIAssistantService.getEndpoint(), requestOptions,
             openAIAssistantService.getServiceVersion());
         final String accept = "application/json";
-        return this.openAIAssistantService.deleteVectorStoreSync(accept, vectorStoreId, requestOptions, Context.none());
+        return this.openAIAssistantService.deleteVectorStoreSync(vectorStoreId, accept, requestOptions, Context.none());
     }
 
     /**
@@ -2617,7 +2597,7 @@ public final class AssistantsClient {
         addAzureVersionToRequestOptions(openAIAssistantService.getEndpoint(), requestOptions,
             openAIAssistantService.getServiceVersion());
         final String accept = "application/json";
-        return this.openAIAssistantService.listVectorStoreFilesSync(accept, vectorStoreId, requestOptions, Context.none());
+        return this.openAIAssistantService.listVectorStoreFilesSync(vectorStoreId, accept, requestOptions, Context.none());
     }
 
     /**
@@ -2659,7 +2639,7 @@ public final class AssistantsClient {
         addAzureVersionToRequestOptions(openAIAssistantService.getEndpoint(), requestOptions,
             openAIAssistantService.getServiceVersion());
         final String accept = "application/json";
-        return this.openAIAssistantService.createVectorStoreFileSync(accept, vectorStoreId, request, requestOptions, Context.none());
+        return this.openAIAssistantService.createVectorStoreFileSync(vectorStoreId, accept, request, requestOptions, Context.none());
     }
 
     /**
@@ -2693,7 +2673,7 @@ public final class AssistantsClient {
         addAzureVersionToRequestOptions(openAIAssistantService.getEndpoint(), requestOptions,
             openAIAssistantService.getServiceVersion());
         final String accept = "application/json";
-        return this.openAIAssistantService.getVectorStoreFileSync(accept, vectorStoreId, fileId, requestOptions, Context.none());
+        return this.openAIAssistantService.getVectorStoreFileSync(vectorStoreId, accept, fileId, requestOptions, Context.none());
     }
 
     /**
@@ -2721,7 +2701,7 @@ public final class AssistantsClient {
         addAzureVersionToRequestOptions(openAIAssistantService.getEndpoint(), requestOptions,
             openAIAssistantService.getServiceVersion());
         final String accept = "application/json";
-        return this.openAIAssistantService.deleteVectorStoreFileSync(accept, vectorStoreId, fileId, requestOptions, Context.none());
+        return this.openAIAssistantService.deleteVectorStoreFileSync(vectorStoreId, accept, fileId, requestOptions, Context.none());
     }
 
     /**
@@ -2767,7 +2747,7 @@ public final class AssistantsClient {
         addAzureVersionToRequestOptions(openAIAssistantService.getEndpoint(), requestOptions,
             openAIAssistantService.getServiceVersion());
         final String accept = "application/json";
-        return this.openAIAssistantService.createVectorStoreFileBatchSync(accept, vectorStoreId, request,
+        return this.openAIAssistantService.createVectorStoreFileBatchSync(vectorStoreId, accept, request,
             requestOptions, Context.none());
     }
 
@@ -2804,7 +2784,7 @@ public final class AssistantsClient {
         addAzureVersionToRequestOptions(openAIAssistantService.getEndpoint(), requestOptions,
             openAIAssistantService.getServiceVersion());
         final String accept = "application/json";
-        return this.openAIAssistantService.getVectorStoreFileBatchSync(accept, vectorStoreId, batchId, requestOptions, Context.none());
+        return this.openAIAssistantService.getVectorStoreFileBatchSync(vectorStoreId, accept, batchId, requestOptions, Context.none());
     }
 
     /**
@@ -2841,7 +2821,7 @@ public final class AssistantsClient {
         addAzureVersionToRequestOptions(openAIAssistantService.getEndpoint(), requestOptions,
             openAIAssistantService.getServiceVersion());
         final String accept = "application/json";
-        return this.openAIAssistantService.cancelVectorStoreFileBatchSync(accept, vectorStoreId, batchId,
+        return this.openAIAssistantService.cancelVectorStoreFileBatchSync(vectorStoreId, batchId, accept,
             requestOptions, Context.none());
     }
 
@@ -2903,7 +2883,7 @@ public final class AssistantsClient {
         addAzureVersionToRequestOptions(openAIAssistantService.getEndpoint(), requestOptions,
             openAIAssistantService.getServiceVersion());
         final String accept = "application/json";
-        return this.openAIAssistantService.listVectorStoreFileBatchFilesSync(accept, vectorStoreId, batchId,
+        return this.openAIAssistantService.listVectorStoreFileBatchFilesSync(vectorStoreId, batchId, accept,
             requestOptions, Context.none());
     }
 

@@ -61,14 +61,14 @@ public abstract class AssistantsClientTestBase {
 
     AssistantsClient getAssistantsClient() {
         AssistantsClientBuilder builder = new AssistantsClientBuilder()
-            .serviceVersion(AssistantsServiceVersion.V2024_02_15_PREVIEW)
+            .serviceVersion(AssistantsServiceVersion.getLatest())
             .endpoint(Configuration.getGlobalConfiguration().get("AZURE_OPENAI_ENDPOINT"))
             .credential(new KeyCredential(Configuration.getGlobalConfiguration().get("AZURE_OPENAI_KEY")));
 
         return builder.buildClient();
     }
 
-    public static final String GPT_4_1106_PREVIEW = "gpt-4-1106-preview";
+    public static final String GPT_4_1106_PREVIEW = "gpt-4";
 
     void createAssistantsRunner(Consumer<AssistantCreationOptions> testRunner) {
         testRunner.accept(new AssistantCreationOptions(GPT_4_1106_PREVIEW)

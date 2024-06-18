@@ -17,6 +17,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
 import static com.azure.ai.openai.assistants.models.FilePurpose.ASSISTANTS;
@@ -26,6 +27,7 @@ import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
+@Disabled("Support for multipart form data is not available in the generated client")
 public class VectorStoreSyncTests extends AssistantsClientTestBase {
     private static final ClientLogger LOGGER = new ClientLogger(VectorStoreSyncTests.class);
 

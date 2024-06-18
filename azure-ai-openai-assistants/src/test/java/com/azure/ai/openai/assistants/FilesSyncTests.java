@@ -13,12 +13,14 @@ import io.clientcore.core.util.binarydata.BinaryData;
 import java.io.IOException;
 import java.io.UncheckedIOException;
 import java.util.List;
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
+@Disabled("Support for multipart form data is not available in the generated client")
 public class FilesSyncTests extends AssistantsClientTestBase {
 
     private AssistantsClient client;

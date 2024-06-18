@@ -226,6 +226,7 @@ public class JavaPoetTemplateProcessor implements TemplateProcessor {
                     HTTP_HEADER_NAME, header.getKey(), header
                         .getValue());
             }
+
             methodBuilder.addStatement("httpRequest.setHeaders(headers)");
         }
 
@@ -248,6 +249,8 @@ public class JavaPoetTemplateProcessor implements TemplateProcessor {
 
             configureRequestWithBodyAndContentType(methodBuilder, parameterType, contentType, parameterName);
         } else {
+            methodBuilder
+                .addStatement("httpRequest.getHeaders().set($T.CONTENT_LENGTH, $S)", HttpHeaderName.class, "0");
             methodBuilder.addComment("no body content to set");
         }
 
@@ -359,16 +362,16 @@ public class JavaPoetTemplateProcessor implements TemplateProcessor {
                 }
             }
             setContentTypeHeader(methodBuilder, contentType);
-
-            if (parameterType.equals("BinaryData")) {
+            if (parameterType.equals("io.clientcore.core.util.binarydata.BinaryData")) {
                 methodBuilder
-                    .addStatement("$T binaryData = ($T) contents", BinaryData.class, BinaryData.class)
+                    .addStatement("$T binaryData = ($T) $L", BinaryData.class, BinaryData.class, parameterName)
                     .beginControlFlow("if (binaryData.getLength() != null)")
                     .addStatement(
                         "httpRequest.getHeaders().set($T.CONTENT_LENGTH, String.valueOf(binaryData.getLength()))",
                         HttpHeaderName.class)
                     .addStatement("httpRequest.setBody(binaryData)")
                     .endControlFlow();
+                return;
             }
 
             boolean isJson = false;

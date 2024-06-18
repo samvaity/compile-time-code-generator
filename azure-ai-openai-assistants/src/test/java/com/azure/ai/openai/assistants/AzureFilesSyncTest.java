@@ -14,6 +14,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
+@Disabled("Support for multipart form data is not available in the generated client")
 public class AzureFilesSyncTest extends AssistantsClientTestBase {
 
     private AssistantsClient client;

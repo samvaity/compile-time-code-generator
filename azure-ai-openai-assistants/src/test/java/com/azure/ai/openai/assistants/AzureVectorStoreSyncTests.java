@@ -25,6 +25,7 @@ import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
+@Disabled("Support for multipart form data is not available in the generated client")
 public class AzureVectorStoreSyncTests extends AssistantsClientTestBase {
     private static final ClientLogger LOGGER = new ClientLogger(AzureVectorStoreSyncTests.class);
 
