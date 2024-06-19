@@ -209,9 +209,21 @@ public class JavaPoetTemplateProcessor implements TemplateProcessor {
                 .addStatement("$T headers = new $T()", ClassName.get("io.clientcore.core.http.models", "HttpHeaders"),
                     ClassName.get("io.clientcore.core.http.models", "HttpHeaders"));
             for (Map.Entry<String, String> header : method.getHeaders().entrySet()) {
-                methodBuilder.addStatement("headers.add($T.fromString($S), String.valueOf($L))",
-                    HTTP_HEADER_NAME, header.getKey(), header
-                        .getValue());
+                String enumHeaderKey = header.getKey().toUpperCase().replace("-", "_");
+                boolean isEnumExists = false;
+                for (HttpHeaderName httpHeaderName : HttpHeaderName.values()) {
+                    if (httpHeaderName.getCaseInsensitiveName().equals(header.getKey().toLowerCase())) {
+                        isEnumExists = true;
+                        break;
+                    }
+                }
+                if (isEnumExists) {
+                    methodBuilder.addStatement("headers.add($T.$L, $L)",
+                        HTTP_HEADER_NAME, enumHeaderKey, header.getValue());
+                } else {
+                    methodBuilder.addStatement("headers.add($T.fromString($S), $L)",
+                        HTTP_HEADER_NAME, header.getKey(), header.getValue());
+                }
             }
 
             methodBuilder.addStatement("httpRequest.setHeaders(headers)");
