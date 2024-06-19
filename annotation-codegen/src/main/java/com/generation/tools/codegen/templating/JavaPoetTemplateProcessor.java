@@ -44,16 +44,6 @@ public class JavaPoetTemplateProcessor implements TemplateProcessor {
 
         ClassName interfaceType = ClassName.get(packageName, serviceInterfaceShortName);
 
-        // Create the INSTANCE_MAP field
-        //TypeName mapType = ParameterizedTypeName.get(
-        //    ClassName.get(Map.class),
-        //    HTTP_PIPELINE,
-        //    interfaceType
-        //);
-        //FieldSpec instanceMap = FieldSpec.builder(mapType, "INSTANCE_MAP", Modifier.PRIVATE, Modifier.STATIC)
-        //    .initializer("new $T<>()", HashMap.class)
-        //    .build();
-
         // add LoggerField
         ClassName serviceClass = ClassName.get(packageName, serviceInterfaceImplShortName);
         ClassName loggerClass = ClassName.get("io.clientcore.core.util", "ClientLogger");
@@ -94,18 +84,23 @@ public class JavaPoetTemplateProcessor implements TemplateProcessor {
             .addStatement("this.endpoint = endpoint")
             .addParameter(SERVICE_VERSION_TYPE,
                 "serviceVersion")
+            .addStatement("this.apiVersion = serviceVersion.getVersion()")
             .addStatement("this.serviceVersion = serviceVersion")
+            .build();
+
+        FieldSpec apiVersion = FieldSpec.builder(String.class, "apiVersion")
+            .addModifiers(Modifier.PRIVATE)
             .build();
 
         classBuilder = TypeSpec.classBuilder(serviceInterfaceImplShortName)
             .addModifiers(Modifier.PUBLIC)
             .addSuperinterface(interfaceType)
             .addField(loggerField)
-            //.addField(instanceMap)
             .addField(defaultPipeline)
             .addField(serializer)
             .addField(endpoint)
             .addField(serviceVersion)
+            .addField(apiVersion)
             .addMethod(getEndpointMethod())
             .addMethod(getPipelineMethod())
             .addMethod(getServiceVersionMethod())
@@ -167,25 +162,17 @@ public class JavaPoetTemplateProcessor implements TemplateProcessor {
             methodBuilder.addParameter(TypeName.get(parameter.getTypeMirror()), parameter.getName());
         }
 
-        // add call to the overloaded version of this method, passing in the default http pipeline
+        // add call to the overloaded version of this method
         String params = method.getParameters().stream()
             .map(HttpRequestContext.MethodParameter::getName)
-            .filter(name -> !name.equals("endpoint") && !name.equals("apiVersion"))
             .reduce((a, b) -> a + ", " + b)
             .orElse("");
-        //if (!"void".equals(method.getMethodReturnType())) {
-        //    methodBuilder.addStatement("return $L(this.getEndpoint(), $L)",
-        //        method.getMethodName(), params);
-        //} else {
-        //    methodBuilder.addStatement("$L(this.getEndpoint(), $L)",
-        //        method.getMethodName(), params);
-        //}
 
         if (!"void".equals(method.getMethodReturnType())) {
-            methodBuilder.addStatement("return $L(this.getEndpoint(), this.getServiceVersion().getVersion(), $L)",
+            methodBuilder.addStatement("return $L($L)",
                 method.getMethodName(), params);
         } else {
-            methodBuilder.addStatement("$L(this.getEndpoint(), this.getServiceVersion().getVersion(), $L)",
+            methodBuilder.addStatement("$L($L)",
                 method.getMethodName(), params);
         }
 
