@@ -19,7 +19,6 @@ import io.clientcore.core.util.binarydata.BinaryData;
 import io.clientcore.core.util.serializer.ObjectSerializer;
 import java.io.IOException;
 import java.io.UncheckedIOException;
-import java.util.Arrays;
 import java.util.Map;
 import java.util.stream.Collectors;
 import javax.annotation.processing.ProcessingEnvironment;
@@ -268,9 +267,10 @@ public class JavaPoetTemplateProcessor implements TemplateProcessor {
                 methodBuilder.addStatement("boolean expectedResponse = responseCode == $L",
                     method.getExpectedStatusCodes().get(0));
             } else {
-                methodBuilder.addStatement(
-                    "boolean expectedResponse = $T.binarySearch(new int[] {$L}, responseCode) > -1", Arrays.class,
-                    method.getExpectedStatusCodes().stream().map(String::valueOf).collect(Collectors.joining(", ")));
+                String statusCodes = method.getExpectedStatusCodes().stream()
+                    .map(code -> "responseCode == " + code)
+                    .collect(Collectors.joining(" || "));
+                methodBuilder.addStatement("boolean expectedResponse = " + statusCodes);
             }
             methodBuilder.beginControlFlow("if (!expectedResponse)")
                 .addStatement("throw new $T(\"Unexpected response code: \" + responseCode)", RuntimeException.class)
