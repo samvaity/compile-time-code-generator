@@ -1,5 +1,6 @@
 package com.generation.tools.codegen.models;
 
+import io.clientcore.core.http.annotation.UnexpectedResponseExceptionDetail;
 import javax.lang.model.element.TypeElement;
 import javax.lang.model.type.DeclaredType;
 import javax.lang.model.type.TypeKind;
@@ -23,6 +24,7 @@ public class TemplateInput {
     private String host;
 
     private List<HttpRequestContext> httpRequestContexts;
+    private List<UnexpectedResponseExceptionDetail> unexpectedResponseExceptionDetails;
 
     public String getHost() {
         return host;
@@ -124,5 +126,13 @@ public class TemplateInput {
 
     public String getServiceInterfaceFQN() {
         return serviceInterfaceFQN;
+    }
+
+    public List<UnexpectedResponseExceptionDetail> getUnexpectedResponseExceptionDetails() {
+        return unexpectedResponseExceptionDetails;
+    }
+
+    public void setUnexpectedResponseExceptionDetails(List<UnexpectedResponseExceptionDetail> unexpectedResponseExceptionDetails) {
+        this.unexpectedResponseExceptionDetails = unexpectedResponseExceptionDetails;
     }
 }

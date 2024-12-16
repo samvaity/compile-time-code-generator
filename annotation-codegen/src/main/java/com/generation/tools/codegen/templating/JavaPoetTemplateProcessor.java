@@ -66,10 +66,7 @@ public class JavaPoetTemplateProcessor implements TemplateProcessor {
             .build();
 
         // Create the serviceVersion field
-        String[] parts = serviceInterfaceShortName.split("(?<=.)(?=\\p{Lu})"); // Split the interface name into parts
-        String fieldName = parts[0]; // Use the first part as the field name
-        SERVICE_VERSION_TYPE = ClassName.get("com.azure.ai.openai.assistants", fieldName + "ServiceVersion");
-        FieldSpec serviceVersion =
+        SERVICE_VERSION_TYPE = ClassName.get("com.service.clientlibrary.models", serviceInterfaceShortName.substring(0, serviceInterfaceShortName.indexOf("ClientService")) + "ServiceVersion");        FieldSpec serviceVersion =
             FieldSpec.builder(SERVICE_VERSION_TYPE, "serviceVersion", Modifier.PRIVATE, Modifier.FINAL).build();
 
         // Create the constructor
@@ -289,7 +286,10 @@ public class JavaPoetTemplateProcessor implements TemplateProcessor {
                     .endControlFlow();
                 createResponseIfNecessary(returnTypeName, methodBuilder);
             } else {
-                methodBuilder.addStatement("$T responseBodyMode = null", ResponseBodyMode.class)
+                // utilMethodsForResponseMode(method, returnTypeName, methodBuilder);
+                methodBuilder.addStatement("$T responseBodyMode = null", ResponseBodyMode.class);
+                utilMethodForDeserializeResponseMode(method, returnTypeName, methodBuilder);
+                methodBuilder
                     .beginControlFlow("if (requestOptions != null)")
                     .addStatement("responseBodyMode = requestOptions.getResponseBodyMode()")
                     .endControlFlow()
@@ -311,6 +311,27 @@ public class JavaPoetTemplateProcessor implements TemplateProcessor {
         }
 
         classBuilder.addMethod(methodBuilder.build());
+    }
+
+    private void utilMethodForDeserializeResponseMode(HttpRequestContext method, TypeName returnTypeName, MethodSpec.Builder methodBuilder) {
+        if (returnTypeName.toString().contains("InputStream")) {
+            methodBuilder.addStatement("responseBodyMode = ResponseBodyMode.STREAM");
+        } else if (returnTypeName.toString().contains("byte[]")) {
+            methodBuilder.addStatement("responseBodyMode = ResponseBodyMode.BYTES");
+        } else if (returnTypeName.toString().contains("BinaryData")) {
+            methodBuilder.addStatement("responseBodyMode = ResponseBodyMode.IGNORE");
+        } else {
+            methodBuilder.addStatement("responseBodyMode = ResponseBodyMode.DESERIALIZE");
+        }
+    }
+
+    private void utilMethodsForResponseMode(HttpRequestContext method, TypeName returnTypeName, MethodSpec.Builder methodBuilder) {
+        ResponseBodyMode responseBodyMode = null;
+        if (responseBodyMode == ResponseBodyMode.DESERIALIZE && returnTypeName.toString().contains("Void")) {
+            methodBuilder.addStatement("return null");
+        } else {
+            methodBuilder.addStatement("$T responseBody = null", BinaryData.class);
+        }
     }
 
     private static void createResponseIfNecessary(TypeName returnTypeName, MethodSpec.Builder methodBuilder) {

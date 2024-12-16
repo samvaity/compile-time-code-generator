@@ -10,7 +10,7 @@ import org.junit.jupiter.params.provider.MethodSource;
 
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
-public class JavaPoetTemplateProcessorTest {
+public class BodyContentTypeProcessorTests {
     private JavaPoetTemplateProcessor processor;
 
     @BeforeEach
@@ -108,9 +108,9 @@ public class JavaPoetTemplateProcessorTest {
             Arguments.of(new HttpRequestContext.Body(null, "ByteBuffer", "request"),
                 "httpRequest.setBody(io.clientcore.core.util.binarydata.BinaryData.fromObject(request, serializer));"),
             Arguments.of(new HttpRequestContext.Body("application/octet-stream", "BinaryData", "request"),
-                "httpRequest.setBody(binaryData)"),
+                "httpRequest.setBody(io.clientcore.core.util.binarydata.BinaryData.fromObject(request, serializer));"),
             Arguments.of(new HttpRequestContext.Body("application/json", "BinaryData", "request"),
-                "httpRequest.setBody(binaryData)"),
+                "httpRequest.setBody(io.clientcore.core.util.binarydata.BinaryData.fromObject(request, serializer));"),
             Arguments.of(new HttpRequestContext.Body("application/json", "serializable", "request"),
                 "httpRequest.setBody(io.clientcore.core.util.binarydata.BinaryData.fromObject(request, serializer))"),
             Arguments.of(new HttpRequestContext.Body("application/octet-stream", "byte[]", "request"),

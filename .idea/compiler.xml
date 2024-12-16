@@ -1,8 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Annotation profile for open-ai-client-library" enabled="true">
+        <sourceOutputDir name="target/generated-sources" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <processor name="com.generation.tools.codegen.AnnotationProcessor" />
+        <module name="open-ai-client-library" />
+      </profile>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="annotation-codegen" />
+      </profile>
+    </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="annotation-codegen" target="1.8" />
       <module name="appconfig-client-library" target="1.8" />
       <module name="client-library" target="1.8" />
       <module name="client-library (1)" target="1.8" />

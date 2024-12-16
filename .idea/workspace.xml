@@ -5,30 +5,249 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1f722a64-d123-417d-9405-b19f950384d4" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/open-ai-client-library/src/main/java/com/service/clientlibrary/implementation/models/MultipartDataHelper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/open-ai-client-library/src/main/java/com/service/clientlibrary/implementation/models/MultipartDataSerializationResult.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/annotation-codegen/src/main/java/com/generation/tools/codegen/AnnotationProcessor.java" beforeDir="false" afterPath="$PROJECT_DIR$/annotation-codegen/src/main/java/com/generation/tools/codegen/AnnotationProcessor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/annotation-codegen/src/main/java/com/generation/tools/codegen/models/TemplateInput.java" beforeDir="false" afterPath="$PROJECT_DIR$/annotation-codegen/src/main/java/com/generation/tools/codegen/models/TemplateInput.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/annotation-codegen/src/main/java/com/generation/tools/codegen/templating/JavaPoetTemplateProcessor.java" beforeDir="false" afterPath="$PROJECT_DIR$/annotation-codegen/src/main/java/com/generation/tools/codegen/templating/JavaPoetTemplateProcessor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/annotation-codegen/src/main/resources/META-INF/maven/archetype.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/annotation-codegen/src/test/java/JavaPoetTemplateProcessorTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/annotation-codegen/src/test/java/JavaPoetTemplateProcessorTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/annotation-codegen/src/test/java/com/generation/tools/codegen/utils/PathBuilderTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/annotation-codegen/src/test/java/com/generation/tools/codegen/utils/PathBuilderTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client-library/src/main/java/com/service/clientlibrary/implementation/TodoItemsService.java" beforeDir="false" afterPath="$PROJECT_DIR$/client-library/src/main/java/com/service/clientlibrary/implementation/TodoItemsService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client-library/target/generated-sources/com/service/clientlibrary/implementation/TodoItemsAttachmentsServiceImpl.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client-library/target/generated-sources/com/service/clientlibrary/implementation/TodoItemsServiceImpl.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client-library/target/generated-sources/com/service/clientlibrary/implementation/UsersServiceImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/annotation-codegen/target/classes/com/generation/tools/codegen/models/Substitution.class" beforeDir="false" afterPath="$PROJECT_DIR$/annotation-codegen/target/classes/com/generation/tools/codegen/models/Substitution.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/annotation-codegen/target/classes/com/generation/tools/codegen/models/TemplateInput.class" beforeDir="false" afterPath="$PROJECT_DIR$/annotation-codegen/target/classes/com/generation/tools/codegen/models/TemplateInput.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/annotation-codegen/target/classes/com/generation/tools/codegen/templating/TemplateProcessor.class" beforeDir="false" afterPath="$PROJECT_DIR$/annotation-codegen/target/classes/com/generation/tools/codegen/templating/TemplateProcessor.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/annotation-codegen/target/classes/com/generation/tools/codegen/utils/PathBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/annotation-codegen/target/classes/com/generation/tools/codegen/utils/PathBuilder.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/annotation-codegen/target/test-classes/com/generation/tools/codegen/utils/PathBuilderTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/annotation-codegen/target/test-classes/com/generation/tools/codegen/utils/PathBuilderTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/appconfig-client-library/src/main/java/com/service/clientlibrary/models/ConfigurationSetting.java" beforeDir="false" afterPath="$PROJECT_DIR$/appconfig-client-library/src/main/java/com/service/clientlibrary/models/ConfigurationSetting.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/appconfig-client-library/src/main/java/com/service/clientlibrary/models/KeyValue.java" beforeDir="false" afterPath="$PROJECT_DIR$/appconfig-client-library/src/main/java/com/service/clientlibrary/models/KeyValue.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/azure-ai-openai-assistants/src/main/java/com/azure/ai/openai/assistants/implementation/models/CreateAssistantFileRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/azure-ai-openai-assistants/src/main/java/com/azure/ai/openai/assistants/implementation/models/CreateAssistantFileRequest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/azure-ai-openai-assistants/src/main/java/com/azure/ai/openai/assistants/implementation/models/CreateMessageRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/azure-ai-openai-assistants/src/main/java/com/azure/ai/openai/assistants/implementation/models/CreateMessageRequest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/azure-ai-openai-assistants/src/main/java/com/azure/ai/openai/assistants/implementation/models/CreateVectorStoreFileBatchRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/azure-ai-openai-assistants/src/main/java/com/azure/ai/openai/assistants/implementation/models/CreateVectorStoreFileBatchRequest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/azure-ai-openai-assistants/src/main/java/com/azure/ai/openai/assistants/implementation/models/CreateVectorStoreFileRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/azure-ai-openai-assistants/src/main/java/com/azure/ai/openai/assistants/implementation/models/CreateVectorStoreFileRequest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/azure-ai-openai-assistants/src/main/java/com/azure/ai/openai/assistants/implementation/models/FileListResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/azure-ai-openai-assistants/src/main/java/com/azure/ai/openai/assistants/implementation/models/FileListResponse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/azure-ai-openai-assistants/src/main/java/com/azure/ai/openai/assistants/implementation/models/OpenAIPageableListOfAssistant.java" beforeDir="false" afterPath="$PROJECT_DIR$/azure-ai-openai-assistants/src/main/java/com/azure/ai/openai/assistants/implementation/models/OpenAIPageableListOfAssistant.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/azure-ai-openai-assistants/src/main/java/com/azure/ai/openai/assistants/implementation/models/OpenAIPageableListOfRunStep.java" beforeDir="false" afterPath="$PROJECT_DIR$/azure-ai-openai-assistants/src/main/java/com/azure/ai/openai/assistants/implementation/models/OpenAIPageableListOfRunStep.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/azure-ai-openai-assistants/src/main/java/com/azure/ai/openai/assistants/implementation/models/OpenAIPageableListOfThreadMessage.java" beforeDir="false" afterPath="$PROJECT_DIR$/azure-ai-openai-assistants/src/main/java/com/azure/ai/openai/assistants/implementation/models/OpenAIPageableListOfThreadMessage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/azure-ai-openai-assistants/src/main/java/com/azure/ai/openai/assistants/implementation/models/OpenAIPageableListOfThreadRun.java" beforeDir="false" afterPath="$PROJECT_DIR$/azure-ai-openai-assistants/src/main/java/com/azure/ai/openai/assistants/implementation/models/OpenAIPageableListOfThreadRun.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/azure-ai-openai-assistants/src/main/java/com/azure/ai/openai/assistants/implementation/models/OpenAIPageableListOfVectorStore.java" beforeDir="false" afterPath="$PROJECT_DIR$/azure-ai-openai-assistants/src/main/java/com/azure/ai/openai/assistants/implementation/models/OpenAIPageableListOfVectorStore.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/azure-ai-openai-assistants/src/main/java/com/azure/ai/openai/assistants/implementation/models/OpenAIPageableListOfVectorStoreFile.java" beforeDir="false" afterPath="$PROJECT_DIR$/azure-ai-openai-assistants/src/main/java/com/azure/ai/openai/assistants/implementation/models/OpenAIPageableListOfVectorStoreFile.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/azure-ai-openai-assistants/src/main/java/com/azure/ai/openai/assistants/implementation/models/SubmitToolOutputsToRunRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/azure-ai-openai-assistants/src/main/java/com/azure/ai/openai/assistants/implementation/models/SubmitToolOutputsToRunRequest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/azure-ai-openai-assistants/src/main/java/com/azure/ai/openai/assistants/implementation/models/UpdateMessageRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/azure-ai-openai-assistants/src/main/java/com/azure/ai/openai/assistants/implementation/models/UpdateMessageRequest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/azure-ai-openai-assistants/src/main/java/com/azure/ai/openai/assistants/implementation/models/UpdateRunRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/azure-ai-openai-assistants/src/main/java/com/azure/ai/openai/assistants/implementation/models/UpdateRunRequest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/azure-ai-openai-assistants/src/main/java/com/azure/ai/openai/assistants/implementation/models/UpdateThreadRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/azure-ai-openai-assistants/src/main/java/com/azure/ai/openai/assistants/implementation/models/UpdateThreadRequest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/azure-ai-openai-assistants/src/main/java/com/azure/ai/openai/assistants/models/Assistant.java" beforeDir="false" afterPath="$PROJECT_DIR$/azure-ai-openai-assistants/src/main/java/com/azure/ai/openai/assistants/models/Assistant.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/azure-ai-openai-assistants/src/main/java/com/azure/ai/openai/assistants/models/AssistantCreationOptions.java" beforeDir="false" afterPath="$PROJECT_DIR$/azure-ai-openai-assistants/src/main/java/com/azure/ai/openai/assistants/models/AssistantCreationOptions.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/azure-ai-openai-assistants/src/main/java/com/azure/ai/openai/assistants/models/AssistantDeletionStatus.java" beforeDir="false" afterPath="$PROJECT_DIR$/azure-ai-openai-assistants/src/main/java/com/azure/ai/openai/assistants/models/AssistantDeletionStatus.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/azure-ai-openai-assistants/src/main/java/com/azure/ai/openai/assistants/models/AssistantThread.java" beforeDir="false" afterPath="$PROJECT_DIR$/azure-ai-openai-assistants/src/main/java/com/azure/ai/openai/assistants/models/AssistantThread.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/azure-ai-openai-assistants/src/main/java/com/azure/ai/openai/assistants/models/AssistantThreadCreationOptions.java" beforeDir="false" afterPath="$PROJECT_DIR$/azure-ai-openai-assistants/src/main/java/com/azure/ai/openai/assistants/models/AssistantThreadCreationOptions.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/azure-ai-openai-assistants/src/main/java/com/azure/ai/openai/assistants/models/AssistantsApiResponseFormat.java" beforeDir="false" afterPath="$PROJECT_DIR$/azure-ai-openai-assistants/src/main/java/com/azure/ai/openai/assistants/models/AssistantsApiResponseFormat.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/azure-ai-openai-assistants/src/main/java/com/azure/ai/openai/assistants/models/AssistantsNamedToolChoice.java" beforeDir="false" afterPath="$PROJECT_DIR$/azure-ai-openai-assistants/src/main/java/com/azure/ai/openai/assistants/models/AssistantsNamedToolChoice.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/azure-ai-openai-assistants/src/main/java/com/azure/ai/openai/assistants/models/CodeInterpreterToolDefinition.java" beforeDir="false" afterPath="$PROJECT_DIR$/azure-ai-openai-assistants/src/main/java/com/azure/ai/openai/assistants/models/CodeInterpreterToolDefinition.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/azure-ai-openai-assistants/src/main/java/com/azure/ai/openai/assistants/models/CodeInterpreterToolResource.java" beforeDir="false" afterPath="$PROJECT_DIR$/azure-ai-openai-assistants/src/main/java/com/azure/ai/openai/assistants/models/CodeInterpreterToolResource.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/azure-ai-openai-assistants/src/main/java/com/azure/ai/openai/assistants/models/CreateAndRunThreadOptions.java" beforeDir="false" afterPath="$PROJECT_DIR$/azure-ai-openai-assistants/src/main/java/com/azure/ai/openai/assistants/models/CreateAndRunThreadOptions.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/azure-ai-openai-assistants/src/main/java/com/azure/ai/openai/assistants/models/CreateCodeInterpreterToolResourceOptions.java" beforeDir="false" afterPath="$PROJECT_DIR$/azure-ai-openai-assistants/src/main/java/com/azure/ai/openai/assistants/models/CreateCodeInterpreterToolResourceOptions.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/azure-ai-openai-assistants/src/main/java/com/azure/ai/openai/assistants/models/CreateFileSearchToolResourceVectorStoreIds.java" beforeDir="false" afterPath="$PROJECT_DIR$/azure-ai-openai-assistants/src/main/java/com/azure/ai/openai/assistants/models/CreateFileSearchToolResourceVectorStoreIds.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/azure-ai-openai-assistants/src/main/java/com/azure/ai/openai/assistants/models/CreateFileSearchToolResourceVectorStoreOptions.java" beforeDir="false" afterPath="$PROJECT_DIR$/azure-ai-openai-assistants/src/main/java/com/azure/ai/openai/assistants/models/CreateFileSearchToolResourceVectorStoreOptions.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/azure-ai-openai-assistants/src/main/java/com/azure/ai/openai/assistants/models/CreateFileSearchToolResourceVectorStoreOptionsList.java" beforeDir="false" afterPath="$PROJECT_DIR$/azure-ai-openai-assistants/src/main/java/com/azure/ai/openai/assistants/models/CreateFileSearchToolResourceVectorStoreOptionsList.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/azure-ai-openai-assistants/src/main/java/com/azure/ai/openai/assistants/models/CreateRunOptions.java" beforeDir="false" afterPath="$PROJECT_DIR$/azure-ai-openai-assistants/src/main/java/com/azure/ai/openai/assistants/models/CreateRunOptions.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/azure-ai-openai-assistants/src/main/java/com/azure/ai/openai/assistants/models/CreateToolResourcesOptions.java" beforeDir="false" afterPath="$PROJECT_DIR$/azure-ai-openai-assistants/src/main/java/com/azure/ai/openai/assistants/models/CreateToolResourcesOptions.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/azure-ai-openai-assistants/src/main/java/com/azure/ai/openai/assistants/models/FileDeletionStatus.java" beforeDir="false" afterPath="$PROJECT_DIR$/azure-ai-openai-assistants/src/main/java/com/azure/ai/openai/assistants/models/FileDeletionStatus.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/azure-ai-openai-assistants/src/main/java/com/azure/ai/openai/assistants/models/FileSearchToolDefinition.java" beforeDir="false" afterPath="$PROJECT_DIR$/azure-ai-openai-assistants/src/main/java/com/azure/ai/openai/assistants/models/FileSearchToolDefinition.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/azure-ai-openai-assistants/src/main/java/com/azure/ai/openai/assistants/models/FileSearchToolResource.java" beforeDir="false" afterPath="$PROJECT_DIR$/azure-ai-openai-assistants/src/main/java/com/azure/ai/openai/assistants/models/FileSearchToolResource.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/azure-ai-openai-assistants/src/main/java/com/azure/ai/openai/assistants/models/FunctionDefinition.java" beforeDir="false" afterPath="$PROJECT_DIR$/azure-ai-openai-assistants/src/main/java/com/azure/ai/openai/assistants/models/FunctionDefinition.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/azure-ai-openai-assistants/src/main/java/com/azure/ai/openai/assistants/models/FunctionName.java" beforeDir="false" afterPath="$PROJECT_DIR$/azure-ai-openai-assistants/src/main/java/com/azure/ai/openai/assistants/models/FunctionName.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/azure-ai-openai-assistants/src/main/java/com/azure/ai/openai/assistants/models/FunctionToolDefinition.java" beforeDir="false" afterPath="$PROJECT_DIR$/azure-ai-openai-assistants/src/main/java/com/azure/ai/openai/assistants/models/FunctionToolDefinition.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/azure-ai-openai-assistants/src/main/java/com/azure/ai/openai/assistants/models/MessageAttachment.java" beforeDir="false" afterPath="$PROJECT_DIR$/azure-ai-openai-assistants/src/main/java/com/azure/ai/openai/assistants/models/MessageAttachment.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/azure-ai-openai-assistants/src/main/java/com/azure/ai/openai/assistants/models/MessageContent.java" beforeDir="false" afterPath="$PROJECT_DIR$/azure-ai-openai-assistants/src/main/java/com/azure/ai/openai/assistants/models/MessageContent.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/azure-ai-openai-assistants/src/main/java/com/azure/ai/openai/assistants/models/MessageDelta.java" beforeDir="false" afterPath="$PROJECT_DIR$/azure-ai-openai-assistants/src/main/java/com/azure/ai/openai/assistants/models/MessageDelta.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/azure-ai-openai-assistants/src/main/java/com/azure/ai/openai/assistants/models/MessageDeltaChunk.java" beforeDir="false" afterPath="$PROJECT_DIR$/azure-ai-openai-assistants/src/main/java/com/azure/ai/openai/assistants/models/MessageDeltaChunk.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/azure-ai-openai-assistants/src/main/java/com/azure/ai/openai/assistants/models/MessageDeltaContent.java" beforeDir="false" afterPath="$PROJECT_DIR$/azure-ai-openai-assistants/src/main/java/com/azure/ai/openai/assistants/models/MessageDeltaContent.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/azure-ai-openai-assistants/src/main/java/com/azure/ai/openai/assistants/models/MessageDeltaImageFileContent.java" beforeDir="false" afterPath="$PROJECT_DIR$/azure-ai-openai-assistants/src/main/java/com/azure/ai/openai/assistants/models/MessageDeltaImageFileContent.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/azure-ai-openai-assistants/src/main/java/com/azure/ai/openai/assistants/models/MessageDeltaImageFileContentObject.java" beforeDir="false" afterPath="$PROJECT_DIR$/azure-ai-openai-assistants/src/main/java/com/azure/ai/openai/assistants/models/MessageDeltaImageFileContentObject.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/azure-ai-openai-assistants/src/main/java/com/azure/ai/openai/assistants/models/MessageDeltaTextAnnotation.java" beforeDir="false" afterPath="$PROJECT_DIR$/azure-ai-openai-assistants/src/main/java/com/azure/ai/openai/assistants/models/MessageDeltaTextAnnotation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/azure-ai-openai-assistants/src/main/java/com/azure/ai/openai/assistants/models/MessageDeltaTextContent.java" beforeDir="false" afterPath="$PROJECT_DIR$/azure-ai-openai-assistants/src/main/java/com/azure/ai/openai/assistants/models/MessageDeltaTextContent.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/azure-ai-openai-assistants/src/main/java/com/azure/ai/openai/assistants/models/MessageDeltaTextContentObject.java" beforeDir="false" afterPath="$PROJECT_DIR$/azure-ai-openai-assistants/src/main/java/com/azure/ai/openai/assistants/models/MessageDeltaTextContentObject.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/azure-ai-openai-assistants/src/main/java/com/azure/ai/openai/assistants/models/MessageDeltaTextFileCitationAnnotation.java" beforeDir="false" afterPath="$PROJECT_DIR$/azure-ai-openai-assistants/src/main/java/com/azure/ai/openai/assistants/models/MessageDeltaTextFileCitationAnnotation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/azure-ai-openai-assistants/src/main/java/com/azure/ai/openai/assistants/models/MessageDeltaTextFileCitationAnnotationObject.java" beforeDir="false" afterPath="$PROJECT_DIR$/azure-ai-openai-assistants/src/main/java/com/azure/ai/openai/assistants/models/MessageDeltaTextFileCitationAnnotationObject.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/azure-ai-openai-assistants/src/main/java/com/azure/ai/openai/assistants/models/MessageDeltaTextFilePathAnnotation.java" beforeDir="false" afterPath="$PROJECT_DIR$/azure-ai-openai-assistants/src/main/java/com/azure/ai/openai/assistants/models/MessageDeltaTextFilePathAnnotation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/azure-ai-openai-assistants/src/main/java/com/azure/ai/openai/assistants/models/MessageDeltaTextFilePathAnnotationObject.java" beforeDir="false" afterPath="$PROJECT_DIR$/azure-ai-openai-assistants/src/main/java/com/azure/ai/openai/assistants/models/MessageDeltaTextFilePathAnnotationObject.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/azure-ai-openai-assistants/src/main/java/com/azure/ai/openai/assistants/models/MessageImageFileContent.java" beforeDir="false" afterPath="$PROJECT_DIR$/azure-ai-openai-assistants/src/main/java/com/azure/ai/openai/assistants/models/MessageImageFileContent.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/azure-ai-openai-assistants/src/main/java/com/azure/ai/openai/assistants/models/MessageImageFileDetails.java" beforeDir="false" afterPath="$PROJECT_DIR$/azure-ai-openai-assistants/src/main/java/com/azure/ai/openai/assistants/models/MessageImageFileDetails.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/azure-ai-openai-assistants/src/main/java/com/azure/ai/openai/assistants/models/MessageImageFileIdDetails.java" beforeDir="false" afterPath="$PROJECT_DIR$/azure-ai-openai-assistants/src/main/java/com/azure/ai/openai/assistants/models/MessageImageFileIdDetails.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/azure-ai-openai-assistants/src/main/java/com/azure/ai/openai/assistants/models/MessageIncompleteDetails.java" beforeDir="false" afterPath="$PROJECT_DIR$/azure-ai-openai-assistants/src/main/java/com/azure/ai/openai/assistants/models/MessageIncompleteDetails.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/azure-ai-openai-assistants/src/main/java/com/azure/ai/openai/assistants/models/MessageTextAnnotation.java" beforeDir="false" afterPath="$PROJECT_DIR$/azure-ai-openai-assistants/src/main/java/com/azure/ai/openai/assistants/models/MessageTextAnnotation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/azure-ai-openai-assistants/src/main/java/com/azure/ai/openai/assistants/models/MessageTextContent.java" beforeDir="false" afterPath="$PROJECT_DIR$/azure-ai-openai-assistants/src/main/java/com/azure/ai/openai/assistants/models/MessageTextContent.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/azure-ai-openai-assistants/src/main/java/com/azure/ai/openai/assistants/models/MessageTextDetails.java" beforeDir="false" afterPath="$PROJECT_DIR$/azure-ai-openai-assistants/src/main/java/com/azure/ai/openai/assistants/models/MessageTextDetails.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/azure-ai-openai-assistants/src/main/java/com/azure/ai/openai/assistants/models/MessageTextFileCitationDetails.java" beforeDir="false" afterPath="$PROJECT_DIR$/azure-ai-openai-assistants/src/main/java/com/azure/ai/openai/assistants/models/MessageTextFileCitationDetails.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/azure-ai-openai-assistants/src/main/java/com/azure/ai/openai/assistants/models/MessageTextFilePathAnnotation.java" beforeDir="false" afterPath="$PROJECT_DIR$/azure-ai-openai-assistants/src/main/java/com/azure/ai/openai/assistants/models/MessageTextFilePathAnnotation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/azure-ai-openai-assistants/src/main/java/com/azure/ai/openai/assistants/models/MessageTextFilePathDetails.java" beforeDir="false" afterPath="$PROJECT_DIR$/azure-ai-openai-assistants/src/main/java/com/azure/ai/openai/assistants/models/MessageTextFilePathDetails.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/azure-ai-openai-assistants/src/main/java/com/azure/ai/openai/assistants/models/OpenAIFile.java" beforeDir="false" afterPath="$PROJECT_DIR$/azure-ai-openai-assistants/src/main/java/com/azure/ai/openai/assistants/models/OpenAIFile.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/azure-ai-openai-assistants/src/main/java/com/azure/ai/openai/assistants/models/RequiredAction.java" beforeDir="false" afterPath="$PROJECT_DIR$/azure-ai-openai-assistants/src/main/java/com/azure/ai/openai/assistants/models/RequiredAction.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/azure-ai-openai-assistants/src/main/java/com/azure/ai/openai/assistants/models/RequiredFunctionToolCall.java" beforeDir="false" afterPath="$PROJECT_DIR$/azure-ai-openai-assistants/src/main/java/com/azure/ai/openai/assistants/models/RequiredFunctionToolCall.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/azure-ai-openai-assistants/src/main/java/com/azure/ai/openai/assistants/models/RequiredFunctionToolCallDetails.java" beforeDir="false" afterPath="$PROJECT_DIR$/azure-ai-openai-assistants/src/main/java/com/azure/ai/openai/assistants/models/RequiredFunctionToolCallDetails.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/azure-ai-openai-assistants/src/main/java/com/azure/ai/openai/assistants/models/RequiredToolCall.java" beforeDir="false" afterPath="$PROJECT_DIR$/azure-ai-openai-assistants/src/main/java/com/azure/ai/openai/assistants/models/RequiredToolCall.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/azure-ai-openai-assistants/src/main/java/com/azure/ai/openai/assistants/models/RunCompletionUsage.java" beforeDir="false" afterPath="$PROJECT_DIR$/azure-ai-openai-assistants/src/main/java/com/azure/ai/openai/assistants/models/RunCompletionUsage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/azure-ai-openai-assistants/src/main/java/com/azure/ai/openai/assistants/models/RunError.java" beforeDir="false" afterPath="$PROJECT_DIR$/azure-ai-openai-assistants/src/main/java/com/azure/ai/openai/assistants/models/RunError.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/azure-ai-openai-assistants/src/main/java/com/azure/ai/openai/assistants/models/RunStep.java" beforeDir="false" afterPath="$PROJECT_DIR$/azure-ai-openai-assistants/src/main/java/com/azure/ai/openai/assistants/models/RunStep.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/azure-ai-openai-assistants/src/main/java/com/azure/ai/openai/assistants/models/RunStepCodeInterpreterImageOutput.java" beforeDir="false" afterPath="$PROJECT_DIR$/azure-ai-openai-assistants/src/main/java/com/azure/ai/openai/assistants/models/RunStepCodeInterpreterImageOutput.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/azure-ai-openai-assistants/src/main/java/com/azure/ai/openai/assistants/models/RunStepCodeInterpreterImageReference.java" beforeDir="false" afterPath="$PROJECT_DIR$/azure-ai-openai-assistants/src/main/java/com/azure/ai/openai/assistants/models/RunStepCodeInterpreterImageReference.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/azure-ai-openai-assistants/src/main/java/com/azure/ai/openai/assistants/models/RunStepCodeInterpreterLogOutput.java" beforeDir="false" afterPath="$PROJECT_DIR$/azure-ai-openai-assistants/src/main/java/com/azure/ai/openai/assistants/models/RunStepCodeInterpreterLogOutput.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/azure-ai-openai-assistants/src/main/java/com/azure/ai/openai/assistants/models/RunStepCodeInterpreterToolCall.java" beforeDir="false" afterPath="$PROJECT_DIR$/azure-ai-openai-assistants/src/main/java/com/azure/ai/openai/assistants/models/RunStepCodeInterpreterToolCall.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/azure-ai-openai-assistants/src/main/java/com/azure/ai/openai/assistants/models/RunStepCodeInterpreterToolCallDetails.java" beforeDir="false" afterPath="$PROJECT_DIR$/azure-ai-openai-assistants/src/main/java/com/azure/ai/openai/assistants/models/RunStepCodeInterpreterToolCallDetails.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/azure-ai-openai-assistants/src/main/java/com/azure/ai/openai/assistants/models/RunStepCodeInterpreterToolCallOutput.java" beforeDir="false" afterPath="$PROJECT_DIR$/azure-ai-openai-assistants/src/main/java/com/azure/ai/openai/assistants/models/RunStepCodeInterpreterToolCallOutput.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/azure-ai-openai-assistants/src/main/java/com/azure/ai/openai/assistants/models/RunStepCompletionUsage.java" beforeDir="false" afterPath="$PROJECT_DIR$/azure-ai-openai-assistants/src/main/java/com/azure/ai/openai/assistants/models/RunStepCompletionUsage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/azure-ai-openai-assistants/src/main/java/com/azure/ai/openai/assistants/models/RunStepDelta.java" beforeDir="false" afterPath="$PROJECT_DIR$/azure-ai-openai-assistants/src/main/java/com/azure/ai/openai/assistants/models/RunStepDelta.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/azure-ai-openai-assistants/src/main/java/com/azure/ai/openai/assistants/models/RunStepDeltaChunk.java" beforeDir="false" afterPath="$PROJECT_DIR$/azure-ai-openai-assistants/src/main/java/com/azure/ai/openai/assistants/models/RunStepDeltaChunk.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/azure-ai-openai-assistants/src/main/java/com/azure/ai/openai/assistants/models/RunStepDeltaCodeInterpreterDetailItemObject.java" beforeDir="false" afterPath="$PROJECT_DIR$/azure-ai-openai-assistants/src/main/java/com/azure/ai/openai/assistants/models/RunStepDeltaCodeInterpreterDetailItemObject.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/azure-ai-openai-assistants/src/main/java/com/azure/ai/openai/assistants/models/RunStepDeltaCodeInterpreterImageOutput.java" beforeDir="false" afterPath="$PROJECT_DIR$/azure-ai-openai-assistants/src/main/java/com/azure/ai/openai/assistants/models/RunStepDeltaCodeInterpreterImageOutput.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/azure-ai-openai-assistants/src/main/java/com/azure/ai/openai/assistants/models/RunStepDeltaCodeInterpreterImageOutputObject.java" beforeDir="false" afterPath="$PROJECT_DIR$/azure-ai-openai-assistants/src/main/java/com/azure/ai/openai/assistants/models/RunStepDeltaCodeInterpreterImageOutputObject.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/azure-ai-openai-assistants/src/main/java/com/azure/ai/openai/assistants/models/RunStepDeltaCodeInterpreterLogOutput.java" beforeDir="false" afterPath="$PROJECT_DIR$/azure-ai-openai-assistants/src/main/java/com/azure/ai/openai/assistants/models/RunStepDeltaCodeInterpreterLogOutput.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/azure-ai-openai-assistants/src/main/java/com/azure/ai/openai/assistants/models/RunStepDeltaCodeInterpreterOutput.java" beforeDir="false" afterPath="$PROJECT_DIR$/azure-ai-openai-assistants/src/main/java/com/azure/ai/openai/assistants/models/RunStepDeltaCodeInterpreterOutput.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/azure-ai-openai-assistants/src/main/java/com/azure/ai/openai/assistants/models/RunStepDeltaCodeInterpreterToolCall.java" beforeDir="false" afterPath="$PROJECT_DIR$/azure-ai-openai-assistants/src/main/java/com/azure/ai/openai/assistants/models/RunStepDeltaCodeInterpreterToolCall.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/azure-ai-openai-assistants/src/main/java/com/azure/ai/openai/assistants/models/RunStepDeltaDetail.java" beforeDir="false" afterPath="$PROJECT_DIR$/azure-ai-openai-assistants/src/main/java/com/azure/ai/openai/assistants/models/RunStepDeltaDetail.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/azure-ai-openai-assistants/src/main/java/com/azure/ai/openai/assistants/models/RunStepDeltaFileSearchToolCall.java" beforeDir="false" afterPath="$PROJECT_DIR$/azure-ai-openai-assistants/src/main/java/com/azure/ai/openai/assistants/models/RunStepDeltaFileSearchToolCall.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/azure-ai-openai-assistants/src/main/java/com/azure/ai/openai/assistants/models/RunStepDeltaFunction.java" beforeDir="false" afterPath="$PROJECT_DIR$/azure-ai-openai-assistants/src/main/java/com/azure/ai/openai/assistants/models/RunStepDeltaFunction.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/azure-ai-openai-assistants/src/main/java/com/azure/ai/openai/assistants/models/RunStepDeltaFunctionToolCall.java" beforeDir="false" afterPath="$PROJECT_DIR$/azure-ai-openai-assistants/src/main/java/com/azure/ai/openai/assistants/models/RunStepDeltaFunctionToolCall.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/azure-ai-openai-assistants/src/main/java/com/azure/ai/openai/assistants/models/RunStepDeltaMessageCreation.java" beforeDir="false" afterPath="$PROJECT_DIR$/azure-ai-openai-assistants/src/main/java/com/azure/ai/openai/assistants/models/RunStepDeltaMessageCreation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/azure-ai-openai-assistants/src/main/java/com/azure/ai/openai/assistants/models/RunStepDeltaMessageCreationObject.java" beforeDir="false" afterPath="$PROJECT_DIR$/azure-ai-openai-assistants/src/main/java/com/azure/ai/openai/assistants/models/RunStepDeltaMessageCreationObject.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/azure-ai-openai-assistants/src/main/java/com/azure/ai/openai/assistants/models/RunStepDeltaToolCall.java" beforeDir="false" afterPath="$PROJECT_DIR$/azure-ai-openai-assistants/src/main/java/com/azure/ai/openai/assistants/models/RunStepDeltaToolCall.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/azure-ai-openai-assistants/src/main/java/com/azure/ai/openai/assistants/models/RunStepDeltaToolCallObject.java" beforeDir="false" afterPath="$PROJECT_DIR$/azure-ai-openai-assistants/src/main/java/com/azure/ai/openai/assistants/models/RunStepDeltaToolCallObject.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/azure-ai-openai-assistants/src/main/java/com/azure/ai/openai/assistants/models/RunStepDetails.java" beforeDir="false" afterPath="$PROJECT_DIR$/azure-ai-openai-assistants/src/main/java/com/azure/ai/openai/assistants/models/RunStepDetails.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/azure-ai-openai-assistants/src/main/java/com/azure/ai/openai/assistants/models/RunStepError.java" beforeDir="false" afterPath="$PROJECT_DIR$/azure-ai-openai-assistants/src/main/java/com/azure/ai/openai/assistants/models/RunStepError.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/azure-ai-openai-assistants/src/main/java/com/azure/ai/openai/assistants/models/RunStepFileSearchToolCall.java" beforeDir="false" afterPath="$PROJECT_DIR$/azure-ai-openai-assistants/src/main/java/com/azure/ai/openai/assistants/models/RunStepFileSearchToolCall.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/azure-ai-openai-assistants/src/main/java/com/azure/ai/openai/assistants/models/RunStepFunctionToolCall.java" beforeDir="false" afterPath="$PROJECT_DIR$/azure-ai-openai-assistants/src/main/java/com/azure/ai/openai/assistants/models/RunStepFunctionToolCall.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/azure-ai-openai-assistants/src/main/java/com/azure/ai/openai/assistants/models/RunStepFunctionToolCallDetails.java" beforeDir="false" afterPath="$PROJECT_DIR$/azure-ai-openai-assistants/src/main/java/com/azure/ai/openai/assistants/models/RunStepFunctionToolCallDetails.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/azure-ai-openai-assistants/src/main/java/com/azure/ai/openai/assistants/models/RunStepMessageCreationDetails.java" beforeDir="false" afterPath="$PROJECT_DIR$/azure-ai-openai-assistants/src/main/java/com/azure/ai/openai/assistants/models/RunStepMessageCreationDetails.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/azure-ai-openai-assistants/src/main/java/com/azure/ai/openai/assistants/models/RunStepMessageCreationReference.java" beforeDir="false" afterPath="$PROJECT_DIR$/azure-ai-openai-assistants/src/main/java/com/azure/ai/openai/assistants/models/RunStepMessageCreationReference.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/azure-ai-openai-assistants/src/main/java/com/azure/ai/openai/assistants/models/RunStepToolCall.java" beforeDir="false" afterPath="$PROJECT_DIR$/azure-ai-openai-assistants/src/main/java/com/azure/ai/openai/assistants/models/RunStepToolCall.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/azure-ai-openai-assistants/src/main/java/com/azure/ai/openai/assistants/models/RunStepToolCallDetails.java" beforeDir="false" afterPath="$PROJECT_DIR$/azure-ai-openai-assistants/src/main/java/com/azure/ai/openai/assistants/models/RunStepToolCallDetails.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/azure-ai-openai-assistants/src/main/java/com/azure/ai/openai/assistants/models/SubmitToolOutputsAction.java" beforeDir="false" afterPath="$PROJECT_DIR$/azure-ai-openai-assistants/src/main/java/com/azure/ai/openai/assistants/models/SubmitToolOutputsAction.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/azure-ai-openai-assistants/src/main/java/com/azure/ai/openai/assistants/models/SubmitToolOutputsDetails.java" beforeDir="false" afterPath="$PROJECT_DIR$/azure-ai-openai-assistants/src/main/java/com/azure/ai/openai/assistants/models/SubmitToolOutputsDetails.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/azure-ai-openai-assistants/src/main/java/com/azure/ai/openai/assistants/models/ThreadDeletionStatus.java" beforeDir="false" afterPath="$PROJECT_DIR$/azure-ai-openai-assistants/src/main/java/com/azure/ai/openai/assistants/models/ThreadDeletionStatus.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/azure-ai-openai-assistants/src/main/java/com/azure/ai/openai/assistants/models/ThreadMessage.java" beforeDir="false" afterPath="$PROJECT_DIR$/azure-ai-openai-assistants/src/main/java/com/azure/ai/openai/assistants/models/ThreadMessage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/azure-ai-openai-assistants/src/main/java/com/azure/ai/openai/assistants/models/ThreadMessageOptions.java" beforeDir="false" afterPath="$PROJECT_DIR$/azure-ai-openai-assistants/src/main/java/com/azure/ai/openai/assistants/models/ThreadMessageOptions.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/azure-ai-openai-assistants/src/main/java/com/azure/ai/openai/assistants/models/ThreadRun.java" beforeDir="false" afterPath="$PROJECT_DIR$/azure-ai-openai-assistants/src/main/java/com/azure/ai/openai/assistants/models/ThreadRun.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/azure-ai-openai-assistants/src/main/java/com/azure/ai/openai/assistants/models/ToolDefinition.java" beforeDir="false" afterPath="$PROJECT_DIR$/azure-ai-openai-assistants/src/main/java/com/azure/ai/openai/assistants/models/ToolDefinition.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/azure-ai-openai-assistants/src/main/java/com/azure/ai/openai/assistants/models/ToolOutput.java" beforeDir="false" afterPath="$PROJECT_DIR$/azure-ai-openai-assistants/src/main/java/com/azure/ai/openai/assistants/models/ToolOutput.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/azure-ai-openai-assistants/src/main/java/com/azure/ai/openai/assistants/models/ToolResources.java" beforeDir="false" afterPath="$PROJECT_DIR$/azure-ai-openai-assistants/src/main/java/com/azure/ai/openai/assistants/models/ToolResources.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/azure-ai-openai-assistants/src/main/java/com/azure/ai/openai/assistants/models/TruncationObject.java" beforeDir="false" afterPath="$PROJECT_DIR$/azure-ai-openai-assistants/src/main/java/com/azure/ai/openai/assistants/models/TruncationObject.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/azure-ai-openai-assistants/src/main/java/com/azure/ai/openai/assistants/models/UpdateAssistantOptions.java" beforeDir="false" afterPath="$PROJECT_DIR$/azure-ai-openai-assistants/src/main/java/com/azure/ai/openai/assistants/models/UpdateAssistantOptions.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/azure-ai-openai-assistants/src/main/java/com/azure/ai/openai/assistants/models/UpdateAssistantThreadOptions.java" beforeDir="false" afterPath="$PROJECT_DIR$/azure-ai-openai-assistants/src/main/java/com/azure/ai/openai/assistants/models/UpdateAssistantThreadOptions.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/azure-ai-openai-assistants/src/main/java/com/azure/ai/openai/assistants/models/UpdateCodeInterpreterToolResourceOptions.java" beforeDir="false" afterPath="$PROJECT_DIR$/azure-ai-openai-assistants/src/main/java/com/azure/ai/openai/assistants/models/UpdateCodeInterpreterToolResourceOptions.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/azure-ai-openai-assistants/src/main/java/com/azure/ai/openai/assistants/models/UpdateFileSearchToolResourceOptions.java" beforeDir="false" afterPath="$PROJECT_DIR$/azure-ai-openai-assistants/src/main/java/com/azure/ai/openai/assistants/models/UpdateFileSearchToolResourceOptions.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/azure-ai-openai-assistants/src/main/java/com/azure/ai/openai/assistants/models/UpdateToolResourcesOptions.java" beforeDir="false" afterPath="$PROJECT_DIR$/azure-ai-openai-assistants/src/main/java/com/azure/ai/openai/assistants/models/UpdateToolResourcesOptions.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/azure-ai-openai-assistants/src/main/java/com/azure/ai/openai/assistants/models/VectorStore.java" beforeDir="false" afterPath="$PROJECT_DIR$/azure-ai-openai-assistants/src/main/java/com/azure/ai/openai/assistants/models/VectorStore.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/azure-ai-openai-assistants/src/main/java/com/azure/ai/openai/assistants/models/VectorStoreDeletionStatus.java" beforeDir="false" afterPath="$PROJECT_DIR$/azure-ai-openai-assistants/src/main/java/com/azure/ai/openai/assistants/models/VectorStoreDeletionStatus.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/azure-ai-openai-assistants/src/main/java/com/azure/ai/openai/assistants/models/VectorStoreExpirationPolicy.java" beforeDir="false" afterPath="$PROJECT_DIR$/azure-ai-openai-assistants/src/main/java/com/azure/ai/openai/assistants/models/VectorStoreExpirationPolicy.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/azure-ai-openai-assistants/src/main/java/com/azure/ai/openai/assistants/models/VectorStoreFile.java" beforeDir="false" afterPath="$PROJECT_DIR$/azure-ai-openai-assistants/src/main/java/com/azure/ai/openai/assistants/models/VectorStoreFile.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/azure-ai-openai-assistants/src/main/java/com/azure/ai/openai/assistants/models/VectorStoreFileBatch.java" beforeDir="false" afterPath="$PROJECT_DIR$/azure-ai-openai-assistants/src/main/java/com/azure/ai/openai/assistants/models/VectorStoreFileBatch.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/azure-ai-openai-assistants/src/main/java/com/azure/ai/openai/assistants/models/VectorStoreFileCount.java" beforeDir="false" afterPath="$PROJECT_DIR$/azure-ai-openai-assistants/src/main/java/com/azure/ai/openai/assistants/models/VectorStoreFileCount.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/azure-ai-openai-assistants/src/main/java/com/azure/ai/openai/assistants/models/VectorStoreFileDeletionStatus.java" beforeDir="false" afterPath="$PROJECT_DIR$/azure-ai-openai-assistants/src/main/java/com/azure/ai/openai/assistants/models/VectorStoreFileDeletionStatus.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/azure-ai-openai-assistants/src/main/java/com/azure/ai/openai/assistants/models/VectorStoreFileError.java" beforeDir="false" afterPath="$PROJECT_DIR$/azure-ai-openai-assistants/src/main/java/com/azure/ai/openai/assistants/models/VectorStoreFileError.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/azure-ai-openai-assistants/src/main/java/com/azure/ai/openai/assistants/models/VectorStoreOptions.java" beforeDir="false" afterPath="$PROJECT_DIR$/azure-ai-openai-assistants/src/main/java/com/azure/ai/openai/assistants/models/VectorStoreOptions.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/azure-ai-openai-assistants/src/main/java/com/azure/ai/openai/assistants/models/VectorStoreUpdateOptions.java" beforeDir="false" afterPath="$PROJECT_DIR$/azure-ai-openai-assistants/src/main/java/com/azure/ai/openai/assistants/models/VectorStoreUpdateOptions.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/azure-ai-openai-assistants/src/test/java/com/azure/ai/openai/assistants/FunctionEnumParameter.java" beforeDir="false" afterPath="$PROJECT_DIR$/azure-ai-openai-assistants/src/test/java/com/azure/ai/openai/assistants/FunctionEnumParameter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/azure-ai-openai-assistants/src/test/java/com/azure/ai/openai/assistants/FunctionStringParameter.java" beforeDir="false" afterPath="$PROJECT_DIR$/azure-ai-openai-assistants/src/test/java/com/azure/ai/openai/assistants/FunctionStringParameter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-library/src/main/java/com/service/clientlibrary/implementation/models/CreateRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/client-library/src/main/java/com/service/clientlibrary/implementation/models/CreateRequest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-library/src/main/java/com/service/clientlibrary/models/TodoFileAttachment.java" beforeDir="false" afterPath="$PROJECT_DIR$/client-library/src/main/java/com/service/clientlibrary/models/TodoFileAttachment.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-library/src/main/java/com/service/clientlibrary/models/TodoItem.java" beforeDir="false" afterPath="$PROJECT_DIR$/client-library/src/main/java/com/service/clientlibrary/models/TodoItem.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-library/src/main/java/com/service/clientlibrary/models/TodoItemPatch.java" beforeDir="false" afterPath="$PROJECT_DIR$/client-library/src/main/java/com/service/clientlibrary/models/TodoItemPatch.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-library/src/main/java/com/service/clientlibrary/models/TodoLabelRecord.java" beforeDir="false" afterPath="$PROJECT_DIR$/client-library/src/main/java/com/service/clientlibrary/models/TodoLabelRecord.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-library/src/main/java/com/service/clientlibrary/models/TodoPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/client-library/src/main/java/com/service/clientlibrary/models/TodoPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-library/src/main/java/com/service/clientlibrary/models/TodoPagePagination.java" beforeDir="false" afterPath="$PROJECT_DIR$/client-library/src/main/java/com/service/clientlibrary/models/TodoPagePagination.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-library/src/main/java/com/service/clientlibrary/models/TodoUrlAttachment.java" beforeDir="false" afterPath="$PROJECT_DIR$/client-library/src/main/java/com/service/clientlibrary/models/TodoUrlAttachment.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-library/src/main/java/com/service/clientlibrary/models/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/client-library/src/main/java/com/service/clientlibrary/models/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-library/src/main/java/com/service/clientlibrary/models/UserCreatedResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/client-library/src/main/java/com/service/clientlibrary/models/UserCreatedResponse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/open-ai-client-library/src/main/java/com/service/clientlibrary/OpenAIClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/open-ai-client-library/src/main/java/com/service/clientlibrary/OpenAIClient.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/open-ai-client-library/src/main/java/com/service/clientlibrary/models/AudioTranscription.java" beforeDir="false" afterPath="$PROJECT_DIR$/open-ai-client-library/src/main/java/com/service/clientlibrary/models/AudioTranscription.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/open-ai-client-library/src/main/java/com/service/clientlibrary/models/AudioTranscriptionSegment.java" beforeDir="false" afterPath="$PROJECT_DIR$/open-ai-client-library/src/main/java/com/service/clientlibrary/models/AudioTranscriptionSegment.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/open-ai-client-library/src/main/java/com/service/clientlibrary/models/AudioTranscriptionWord.java" beforeDir="false" afterPath="$PROJECT_DIR$/open-ai-client-library/src/main/java/com/service/clientlibrary/models/AudioTranscriptionWord.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/open-ai-client-library/src/main/java/com/service/clientlibrary/models/AudioTranslation.java" beforeDir="false" afterPath="$PROJECT_DIR$/open-ai-client-library/src/main/java/com/service/clientlibrary/models/AudioTranslation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/open-ai-client-library/src/main/java/com/service/clientlibrary/models/AudioTranslationSegment.java" beforeDir="false" afterPath="$PROJECT_DIR$/open-ai-client-library/src/main/java/com/service/clientlibrary/models/AudioTranslationSegment.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/open-ai-client-library/src/main/java/com/service/clientlibrary/models/ChatCompletions.java" beforeDir="false" afterPath="$PROJECT_DIR$/open-ai-client-library/src/main/java/com/service/clientlibrary/models/ChatCompletions.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/open-ai-client-library/src/main/java/com/service/clientlibrary/models/ChatCompletionsOptions.java" beforeDir="false" afterPath="$PROJECT_DIR$/open-ai-client-library/src/main/java/com/service/clientlibrary/models/ChatCompletionsOptions.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/open-ai-client-library/src/main/java/com/service/clientlibrary/models/ChatMessageContentItem.java" beforeDir="false" afterPath="$PROJECT_DIR$/open-ai-client-library/src/main/java/com/service/clientlibrary/models/ChatMessageContentItem.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/open-ai-client-library/src/main/java/com/service/clientlibrary/models/ChatMessageTextContentItem.java" beforeDir="false" afterPath="$PROJECT_DIR$/open-ai-client-library/src/main/java/com/service/clientlibrary/models/ChatMessageTextContentItem.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/open-ai-client-library/src/main/java/com/service/clientlibrary/models/ChatRequestMessage.java" beforeDir="false" afterPath="$PROJECT_DIR$/open-ai-client-library/src/main/java/com/service/clientlibrary/models/ChatRequestMessage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/open-ai-client-library/src/main/java/com/service/clientlibrary/models/ChatRequestSystemMessage.java" beforeDir="false" afterPath="$PROJECT_DIR$/open-ai-client-library/src/main/java/com/service/clientlibrary/models/ChatRequestSystemMessage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/open-ai-client-library/src/main/java/com/service/clientlibrary/models/ChatRequestUserMessage.java" beforeDir="false" afterPath="$PROJECT_DIR$/open-ai-client-library/src/main/java/com/service/clientlibrary/models/ChatRequestUserMessage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/open-ai-client-library/src/main/java/com/service/clientlibrary/models/CompletionsOptions.java" beforeDir="false" afterPath="$PROJECT_DIR$/open-ai-client-library/src/main/java/com/service/clientlibrary/models/CompletionsOptions.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/open-ai-client-library/src/main/java/com/service/clientlibrary/models/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/open-ai-client-library/src/main/java/com/service/clientlibrary/models/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/open-ai-client-library/src/main/java/com/service/clientlibrary/models/UserCreatedResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/open-ai-client-library/src/main/java/com/service/clientlibrary/models/UserCreatedResponse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/open-ai-client-library/src/test/java/com/service/clientlibrary/OpenAIIntegrationTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/open-ai-client-library/src/test/java/com/service/clientlibrary/OpenAIIntegrationTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;samvaity&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/samvaity/compile-time-code-generator.git&quot;,
+    &quot;accountId&quot;: &quot;612b8019-5ab5-40d1-b0ed-a63b07ab75fc&quot;
+  }
+}</component>
+  <component name="KubernetesApiPersistence"><![CDATA[{}]]></component>
+  <component name="KubernetesApiProvider"><![CDATA[{
+  "isMigrated": true
+}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 6
+}</component>
+  <component name="ProjectId" id="2hnWuX2xTLqUxPu2zeN9dXhsaCj" />
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="1" id="Add" />
   </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
-    "last_opened_file_path": "C:/Users/savaity/IdeaProjects/Java/compile-time-annotation-processor/pom.xml",
-    "node.js.selected.package.tslint": "(autodetect)"
+    "JUnit.JavaPoetTemplateProcessorTest.executor": "Run",
+    "JUnit.JavaPoetTemplateProcessorTest.testConfigureRequestWithBodyAndParameterType.executor": "Debug",
+    "JUnit.OpenAIIntegrationTest.testGetChatCompletions.executor": "Run",
+    "Maven.annotation-codegen [install].executor": "Run",
+    "Maven.open-ai-client-library [org.apache.maven.plugins:maven-compiler-plugin:3.11.0:compile].executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "git-widget-placeholder": "add-generated-sources",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/savaity/IdeaProjects/Java/compile-time-annotation-processor/compile-time-code-generator/open-ai-client-library/src/main/java/com/service/clientlibrary/implementation",
+    "node.js.detected.package.eslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "open-ai-client-library.wasFacetEverAdded": "true",
+    "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
+  <component name="ReactorSettings">
+    <option name="notificationShown" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\savaity\IdeaProjects\Java\compile-time-annotation-processor\compile-time-code-generator\open-ai-client-library\src\main\java\com\service\clientlibrary\implementation" />
+      <recent name="C:\Users\savaity\IdeaProjects\Java\compile-time-annotation-processor\compile-time-code-generator\open-ai-client-library\src\main\java\com\service\clientlibrary" />
+    </key>
+  </component>
   <component name="RunManager">
     <configuration default="true" type="AZURE_FUNCTION_SUPPORT" factoryName="Run Functions">
       <option name="appName" />
@@ -60,19 +279,110 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="BodyContentTypeProcessorTests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="annotation-codegen" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="BodyContentTypeProcessorTests" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="BodyContentTypeProcessorTests.testConfigureRequestWithBodyAndParameterType" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="annotation-codegen" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="BodyContentTypeProcessorTests" />
+      <option name="METHOD_NAME" value="testConfigureRequestWithBodyAndParameterType(com.generation.tools.codegen.models.HttpRequestContext$Body,java.lang.String)" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="OpenAIIntegrationTest.testGetChatCompletions" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="open-ai-client-library" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.service.clientlibrary.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.service.clientlibrary" />
+      <option name="MAIN_CLASS_NAME" value="com.service.clientlibrary.OpenAIIntegrationTest" />
+      <option name="METHOD_NAME" value="testGetChatCompletions" />
+      <option name="TEST_OBJECT" value="method" />
+      <envs>
+        <env name="AZURE_OPENAI_KEY" value="818963f8257a48f287bb0ee80595a2c6" />
+        <env name="AZURE_OPENAI_ENDPOINT" value="https://openai-shared.openai.azure.com/" />
+      </envs>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration default="true" type="JetRunConfigurationType">
+      <module name="compile-time-code-generator" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
+      <module name="compile-time-code-generator" />
       <option name="filePath" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <list>
+      <item itemvalue="JUnit.BodyContentTypeProcessorTests" />
+      <item itemvalue="JUnit.BodyContentTypeProcessorTests.testConfigureRequestWithBodyAndParameterType" />
+      <item itemvalue="JUnit.OpenAIIntegrationTest.testGetChatCompletions" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.BodyContentTypeProcessorTests.testConfigureRequestWithBodyAndParameterType" />
+        <item itemvalue="JUnit.BodyContentTypeProcessorTests" />
+        <item itemvalue="JUnit.OpenAIIntegrationTest.testGetChatCompletions" />
+      </list>
+    </recent_temporary>
   </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-9823dce3aa75-fdfe4dae3a2d-intellij.indexing.shared.core-IU-243.22562.145" />
+        <option value="bundled-js-predefined-d6986cc7102b-deb605915726-JavaScript-IU-243.22562.145" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="1f722a64-d123-417d-9405-b19f950384d4" name="Changes" comment="" />
+      <created>1718230544726</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1718230544726</updated>
+      <workItem from="1718230545796" duration="21000" />
+      <workItem from="1721253268992" duration="2209000" />
+      <workItem from="1734385136301" duration="5106000" />
+    </task>
     <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/open-ai-client-library/src/main/java/com/service/clientlibrary/implementation/OpenAIClientServiceImpl.java</url>
+          <line>285</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/annotation-codegen/src/test/java/JavaPoetTemplateProcessorTest.java</url>
+          <line>66</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

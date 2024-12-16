@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module version="4">
+  <component name="FacetManager">
+    <facet type="azure" name="Azure">
+      <configuration>
+        <option name="dotAzurePath" value="C:\Users\savaity\IdeaProjects\Java\compile-time-annotation-processor\compile-time-code-generator\open-ai-client-library\.azure" />
+      </configuration>
+    </facet>
+  </component>
+</module>

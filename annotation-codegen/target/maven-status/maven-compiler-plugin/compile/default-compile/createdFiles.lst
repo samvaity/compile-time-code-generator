@@ -1,0 +1,10 @@
+com\generation\tools\codegen\models\HttpRequestContext$Body.class
+com\generation\tools\codegen\templating\TemplateProcessor.class
+com\generation\tools\codegen\templating\JavaPoetTemplateProcessor.class
+com\generation\tools\codegen\models\HttpRequestContext.class
+com\generation\tools\codegen\exceptions\MissingSubstitutionException.class
+com\generation\tools\codegen\models\HttpRequestContext$MethodParameter.class
+com\generation\tools\codegen\models\TemplateInput.class
+com\generation\tools\codegen\utils\PathBuilder.class
+com\generation\tools\codegen\AnnotationProcessor.class
+com\generation\tools\codegen\models\Substitution.class

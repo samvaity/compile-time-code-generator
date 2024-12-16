@@ -17,8 +17,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertNull;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class OpenAIIntegrationTest {
     private final String OPENAI_ENDPOINT = System.getenv("AZURE_OPENAI_ENDPOINT");
@@ -75,7 +77,8 @@ public class OpenAIIntegrationTest {
         chatMessages.add(new ChatRequestSystemMessage("You are a helpful assistant. You will talk like a pirate."));
         chatMessages.add(new ChatRequestUserMessage("Can you help me?"));
         chatMessages.add(new ChatRequestUserMessage("What's the best way to train a parrot?"));
-        ChatCompletions resultChatCompletions = clientLibrary.getChatCompletions("gpt-4-1106-preview", new ChatCompletionsOptions(chatMessages)).getValue();
+        ChatCompletions resultChatCompletions = clientLibrary.getChatCompletions("gpt-4o", new ChatCompletionsOptions(chatMessages)).getValue();
         System.out.println(resultChatCompletions.getId());
+        System.out.println(resultChatCompletions.getCreatedAt());
     }
 }

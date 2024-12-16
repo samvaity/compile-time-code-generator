@@ -5,7 +5,6 @@ import com.generation.tools.codegen.models.Substitution;
 import com.generation.tools.codegen.models.TemplateInput;
 import com.generation.tools.codegen.templating.TemplateProcessor;
 import com.generation.tools.codegen.utils.PathBuilder;
-import com.squareup.javapoet.ClassName;
 import io.clientcore.core.annotation.ServiceInterface;
 import io.clientcore.core.http.annotation.BodyParam;
 import io.clientcore.core.http.annotation.HeaderParam;
@@ -14,6 +13,7 @@ import io.clientcore.core.http.annotation.HttpRequestInformation;
 import io.clientcore.core.http.annotation.PathParam;
 import io.clientcore.core.http.annotation.QueryParam;
 
+import io.clientcore.core.http.annotation.UnexpectedResponseExceptionDetail;
 import javax.annotation.processing.AbstractProcessor;
 import javax.annotation.processing.RoundEnvironment;
 import javax.annotation.processing.SupportedAnnotationTypes;
@@ -85,6 +85,14 @@ public class AnnotationProcessor extends AbstractProcessor {
                 .filter(element -> element.getAnnotation(HttpRequestInformation.class) != null)
                 .map(ExecutableElement.class::cast)
                 .map(e -> createHttpRequestContext(e, templateInput))
+                .collect(Collectors.toList()));
+
+        // template input set UnexpectedResponseExceptionDetails
+        templateInput.setUnexpectedResponseExceptionDetails(serviceInterface.getEnclosedElements().stream()
+                .filter(element -> element.getKind() == ElementKind.METHOD)
+                .filter(element -> element.getAnnotation(HttpRequestInformation.class) != null)
+                .map(ExecutableElement.class::cast)
+                .map(e -> e.getAnnotation(UnexpectedResponseExceptionDetail.class))
                 .collect(Collectors.toList()));
 
         TemplateProcessor.getInstance().process(templateInput, processingEnv);

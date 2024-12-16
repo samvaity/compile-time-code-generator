@@ -46,7 +46,8 @@ public class OpenAIClient {
                                                                              BinaryData audioTranscriptionOptions, RequestOptions requestOptions) {
         final String contentType = "multipart/form-data";
         final String accept = "text/plain, application/json";
-        return openAIClientService.getAudioTranscriptionAsPlainTextSync(deploymentOrModelName, contentType, accept, audioTranscriptionOptions, requestOptions, Context.EMPTY);
+        return openAIClientService.getAudioTranscriptionAsPlainTextSync(deploymentOrModelName, contentType, accept,
+            audioTranscriptionOptions, requestOptions, Context.none());
     }
 
     public Response<AudioTranscription> getAudioTranscriptionWithResponse(String deploymentOrModelName, String fileName,
@@ -88,7 +89,7 @@ public class OpenAIClient {
                                                            RequestOptions requestOptions) {
         final String accept = "application/json";
         return openAIClientService.getChatCompletionsSync(deploymentOrModelName, accept, completionsOptions, requestOptions,
-            Context.EMPTY);
+            Context.none());
     }
 
     public Response<ChatCompletions> getChatCompletions(String deploymentOrModelName,

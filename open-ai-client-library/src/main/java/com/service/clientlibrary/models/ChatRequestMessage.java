@@ -4,13 +4,10 @@
 package com.service.clientlibrary.models;
 
 
-import io.clientcore.core.json.JsonReader;
-import io.clientcore.core.json.JsonSerializable;
-import io.clientcore.core.json.JsonToken;
-import io.clientcore.core.json.JsonWriter;
-
-import java.io.IOException;
-
+import io.clientcore.core.serialization.json.JsonReader;
+import io.clientcore.core.serialization.json.JsonSerializable;
+import io.clientcore.core.serialization.json.JsonToken;
+import io.clientcore.core.serialization.json.JsonWriter;
 import java.io.IOException;
 /**
  * An abstract representation of a chat message as provided in a request.
