@@ -190,6 +190,4 @@ public class AnnotationProcessor extends AbstractProcessor {
 
         return PathBuilder.buildPath(rawHost, method);
     }
-
-
 }

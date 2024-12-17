@@ -1,5 +1,6 @@
+package com.generation.tools.codegen.templating;
+
 import com.generation.tools.codegen.models.HttpRequestContext;
-import com.generation.tools.codegen.templating.JavaPoetTemplateProcessor;
 import com.squareup.javapoet.MethodSpec;
 import java.util.stream.Stream;
 import org.junit.jupiter.api.BeforeEach;

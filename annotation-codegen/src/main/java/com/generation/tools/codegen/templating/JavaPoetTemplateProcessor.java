@@ -2,6 +2,7 @@ package com.generation.tools.codegen.templating;
 
 import com.generation.tools.codegen.models.HttpRequestContext;
 import com.generation.tools.codegen.models.TemplateInput;
+import com.generation.tools.codegen.utils.ResponseBodyModeGeneration;
 import com.squareup.javapoet.ClassName;
 import com.squareup.javapoet.FieldSpec;
 import com.squareup.javapoet.JavaFile;
@@ -12,9 +13,6 @@ import com.squareup.javapoet.TypeSpec;
 import io.clientcore.core.http.models.ContentType;
 import io.clientcore.core.http.models.HttpHeaderName;
 import io.clientcore.core.http.models.HttpMethod;
-import io.clientcore.core.http.models.HttpResponse;
-import io.clientcore.core.http.models.ResponseBodyMode;
-import io.clientcore.core.implementation.http.HttpResponseAccessHelper;
 import io.clientcore.core.util.binarydata.BinaryData;
 import io.clientcore.core.util.serializer.ObjectSerializer;
 import java.io.IOException;
@@ -109,6 +107,7 @@ public class JavaPoetTemplateProcessor implements TemplateProcessor {
 
         TypeSpec typeSpec = classBuilder.build();
 
+        // Sets the indentation for the generated source file to four spaces.
         JavaFile javaFile = JavaFile.builder(packageName, typeSpec)
             .indent("    ") // four spaces
             .build();
@@ -286,24 +285,16 @@ public class JavaPoetTemplateProcessor implements TemplateProcessor {
                     .endControlFlow();
                 createResponseIfNecessary(returnTypeName, methodBuilder);
             } else {
-                // utilMethodsForResponseMode(method, returnTypeName, methodBuilder);
-                methodBuilder.addStatement("$T responseBodyMode = null", ResponseBodyMode.class);
-                utilMethodForDeserializeResponseMode(method, returnTypeName, methodBuilder);
-                methodBuilder
-                    .beginControlFlow("if (requestOptions != null)")
-                    .addStatement("responseBodyMode = requestOptions.getResponseBodyMode()")
-                    .endControlFlow()
-                    .beginControlFlow("if (responseBodyMode == $T.DESERIALIZE)", ResponseBodyMode.class);
-                handleResponseModeToCreateResponse(method, returnTypeName, methodBuilder);
-                methodBuilder
-                    .addStatement("$T.setValue(($T<?>) response, responseBody)", HttpResponseAccessHelper.class,
-                        HttpResponse.class)
-                    .nextControlFlow("else");
-                handleResponseModeToCreateResponse(method, returnTypeName, methodBuilder);
-                methodBuilder
-                    .addStatement("$T.setBodyDeserializer(($T<?>) response, (body) -> responseBody)",
-                        HttpResponseAccessHelper.class, HttpResponse.class)
-                    .endControlFlow();
+                // Step 1: Generate ResponseBodyMode assignment
+                ResponseBodyModeGeneration.generateResponseBodyModeAssignment(methodBuilder);
+
+                // Step 2: Generate DESERIALIZE handling
+                ResponseBodyModeGeneration.generateDeserializeResponseHandling(methodBuilder);
+
+                // Step 3: Generate non-DESERIALIZE handling
+                ResponseBodyModeGeneration.generateNonDeserializeResponseHandling(methodBuilder);
+
+                // Step 4: Create the response if necessary
                 createResponseIfNecessary(returnTypeName, methodBuilder);
             }
         } else {
@@ -313,28 +304,8 @@ public class JavaPoetTemplateProcessor implements TemplateProcessor {
         classBuilder.addMethod(methodBuilder.build());
     }
 
-    private void utilMethodForDeserializeResponseMode(HttpRequestContext method, TypeName returnTypeName, MethodSpec.Builder methodBuilder) {
-        if (returnTypeName.toString().contains("InputStream")) {
-            methodBuilder.addStatement("responseBodyMode = ResponseBodyMode.STREAM");
-        } else if (returnTypeName.toString().contains("byte[]")) {
-            methodBuilder.addStatement("responseBodyMode = ResponseBodyMode.BYTES");
-        } else if (returnTypeName.toString().contains("BinaryData")) {
-            methodBuilder.addStatement("responseBodyMode = ResponseBodyMode.IGNORE");
-        } else {
-            methodBuilder.addStatement("responseBodyMode = ResponseBodyMode.DESERIALIZE");
-        }
-    }
-
-    private void utilMethodsForResponseMode(HttpRequestContext method, TypeName returnTypeName, MethodSpec.Builder methodBuilder) {
-        ResponseBodyMode responseBodyMode = null;
-        if (responseBodyMode == ResponseBodyMode.DESERIALIZE && returnTypeName.toString().contains("Void")) {
-            methodBuilder.addStatement("return null");
-        } else {
-            methodBuilder.addStatement("$T responseBody = null", BinaryData.class);
-        }
-    }
-
     private static void createResponseIfNecessary(TypeName returnTypeName, MethodSpec.Builder methodBuilder) {
+        // TODO: Fix me
         methodBuilder.addStatement("return ($T) response", returnTypeName);
     }
 
