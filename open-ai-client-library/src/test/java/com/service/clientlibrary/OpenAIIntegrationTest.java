@@ -29,6 +29,18 @@ public class OpenAIIntegrationTest {
     OpenAIClient clientLibrary = new OpenAIClientBuilder().endpoint(OPENAI_ENDPOINT).credential(new KeyCredential(OPENAI_KEY)).buildClient();
 
     @Test
+    public void testGetChatCompletions() {
+        List<ChatRequestMessage> chatMessages = new ArrayList<>();
+        chatMessages.add(new ChatRequestSystemMessage("You are a helpful assistant. You will talk like a pirate."));
+        chatMessages.add(new ChatRequestUserMessage("Can you help me?"));
+        chatMessages.add(new ChatRequestUserMessage("What's the best way to train a parrot?"));
+        ChatCompletions resultChatCompletions = clientLibrary.getChatCompletions("gpt-4o", new ChatCompletionsOptions(chatMessages)).getValue();
+        System.out.printf("Chat completion id: %s, created at: %s%n", resultChatCompletions.getId(),
+            resultChatCompletions.getCreatedAt());
+        System.out.println("Chat model:"+resultChatCompletions.getModel());
+    }
+
+    @Test
     public void testGetAudioTranscriptionJson() {
 
         byte[] file = BinaryData.fromFile(Paths.get("C:\\Users\\savaity\\IdeaProjects\\Java\\compile-time-annotation-processor\\compile-time-code-generator\\open-ai-client-library\\src\\test\\resources\\batman.wav")).toBytes();
@@ -70,15 +82,4 @@ public class OpenAIIntegrationTest {
                     + "Batman's karate, judo, and jujitsu training has made him a master of stealth and escape, "
                     + "allowing him to appear and disappear at will, and to break free from the chains of his past.";
 
-
-    @Test
-    public void testGetChatCompletions() {
-        List<ChatRequestMessage> chatMessages = new ArrayList<>();
-        chatMessages.add(new ChatRequestSystemMessage("You are a helpful assistant. You will talk like a pirate."));
-        chatMessages.add(new ChatRequestUserMessage("Can you help me?"));
-        chatMessages.add(new ChatRequestUserMessage("What's the best way to train a parrot?"));
-        ChatCompletions resultChatCompletions = clientLibrary.getChatCompletions("gpt-4o", new ChatCompletionsOptions(chatMessages)).getValue();
-        System.out.println(resultChatCompletions.getId());
-        System.out.println(resultChatCompletions.getCreatedAt());
-    }
 }

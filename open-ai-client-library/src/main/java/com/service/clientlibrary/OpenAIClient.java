@@ -14,8 +14,6 @@ import io.clientcore.core.http.models.Response;
 import io.clientcore.core.util.ClientLogger;
 import io.clientcore.core.util.Context;
 import io.clientcore.core.util.binarydata.BinaryData;
-
-import javax.annotation.processing.Completions;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
